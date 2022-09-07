@@ -5,7 +5,7 @@
     "description": "Triggering Workflows with Eventarc",
     "sourceUrl":
     "https://github.com/gitrey/cp-templates/tree/main/workflows-eventarc",
-    "cloudProvisionConfigUrl":"https://raw.githubusercontent.com/gitrey/cp-templates/main/workflows-eventarc/cloudprovision.json"
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/workflows-eventarc/cloudprovision.json"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "description": "Secure Serverless Apps with IAP",
     "sourceUrl":
     "https://github.com/gitrey/cp-templates/tree/main/cloudrun-iap",
-    "cloudProvisionConfigUrl":"https://raw.githubusercontent.com/gitrey/cp-templates/main/cloudrun-iap/cloudprovision.json"
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/cloudrun-iap/cloudprovision.json"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "description": "Triggering Cloud Functions from GCS",
     "sourceUrl":
     "https://github.com/gitrey/cp-templates/tree/main/cloudfunctions-gcs",
-    "cloudProvisionConfigUrl":"https://raw.githubusercontent.com/gitrey/cp-templates/main/cloudfunctions-gcs/cloudprovision.json"
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/cloudfunctions-gcs/cloudprovision.json"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "description": "Onboard Go application",
     "sourceUrl":
     "https://github.com/gitrey/cp-templates/tree/main/go-app",
-    "cloudProvisionConfigUrl":"https://raw.githubusercontent.com/gitrey/cp-templates/main/go-app/cloudprovision.json",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/go-app/cloudprovision.json",
     "params": [
       {
         "param": "APP_NAME",
@@ -53,7 +53,7 @@
     "description": "Onboard Python application",
     "sourceUrl":
     "https://github.com/gitrey/cp-templates/tree/main/python-app",
-    "cloudProvisionConfigUrl":"https://raw.githubusercontent.com/gitrey/cp-templates/main/python-app/cloudprovision.json",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/python-app/cloudprovision.json",
     "params": [
       {
         "param": "APP_NAME",
