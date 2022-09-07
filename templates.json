@@ -29,7 +29,7 @@
     "description": "Onboard Go application",
     "sourceUrl":
     "https://github.com/gitrey/cp-templates/tree/main/go-app",
-    "cloudProvisionConfigUrl":"https://raw.githubusercontent.com/gitrey/cp-templates/main/go-app/cloudprovision.json"
+    "cloudProvisionConfigUrl":"https://raw.githubusercontent.com/gitrey/cp-templates/main/go-app/cloudprovision.json",
     "params": [
       {
         "param": "APP_NAME",
@@ -53,7 +53,7 @@
     "description": "Onboard Python application",
     "sourceUrl":
     "https://github.com/gitrey/cp-templates/tree/main/python-app",
-    "cloudProvisionConfigUrl":"https://raw.githubusercontent.com/gitrey/cp-templates/main/python-app/cloudprovision.json"
+    "cloudProvisionConfigUrl":"https://raw.githubusercontent.com/gitrey/cp-templates/main/python-app/cloudprovision.json",
     "params": [
       {
         "param": "APP_NAME",
