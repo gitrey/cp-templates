@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Triggering Workflows with Eventarc",
+    "description": "Triggering Workflows with Eventarc",
+    "sourceUrl":
+    "https://github.com/gcp-solutions/cloud-provision-templates/workflows-eventarc"
+  },
+  {
+    "id": 2,
+    "name": "Secure Serverless Apps with IAP",
+    "description": "Secure Serverless Apps with IAP",
+    "sourceUrl":
+    "https://github.com/gcp-solutions/cloud-provision-templates/cloudrun-iap"
+  },
+  {
+    "id": 3,
+    "name": "Triggering Cloud Functions from GCS",
+    "description": "Triggering Cloud Functions from GCS",
+    "sourceUrl":
+    "https://github.com/gcp-solutions/cloud-provision-templates/cloudfunctions-gcs"
+  },
+  {
+    "id": 4,
+    "name": "Onboard Go application",
+    "description": "Onboard Go application",
+    "sourceUrl":
+    "https://github.com/gcp-solutions/cloud-provision-templates/go-app",
+    "params": [
+      {
+        "param": "APP_NAME",
+        "label": "Application Name",
+        "description": "Application that will be deployed.",
+        "type": "string",
+        "required": true
+      },
+      {
+        "param": "REGION",
+        "label": "Application Region",
+        "description": "Where do you want to deploy the application?",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Onboard Python application",
+    "description": "Onboard Python application",
+    "sourceUrl":
+    "https://github.com/gcp-solutions/cloud-provision-templates/python-app",
+    "params": [
+      {
+        "param": "APP_NAME",
+        "label": "Application Name",
+        "description": "Application that will be deployed.",
+        "type": "string",
+        "required": true
+      }
+    ]
+  }
+]
