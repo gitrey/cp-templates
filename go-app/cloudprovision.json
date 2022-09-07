@@ -1,0 +1,7 @@
+{
+      "name": "bash",
+      "args": [
+        "echo",
+        "Cloud Provision - Running a bash command to deploy selected template"
+      ]
+    }
