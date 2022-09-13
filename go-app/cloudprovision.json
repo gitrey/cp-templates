@@ -1,7 +1,7 @@
 {
       "name": "gcr.io/google.com/cloudsdktool/cloud-sdk:slim",
       "args": ["gcloud", "beta", "builds", "triggers", "create", "github",
-               "--name=${_APP_NAME}",
+               "--name=${_APP_NAME}-trigger",
                "--repo-name=cp-templates",
                "--repo-owner=gitrey",
                "--branch-pattern=main",
