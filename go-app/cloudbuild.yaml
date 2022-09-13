@@ -30,7 +30,7 @@ steps:
   # [START cloudbuild_go_deploy_yaml]
   # Deploy to Cloud Run
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['run', 'deploy', '$_APP_NAME-${SHORT_SHA}', 
+    args: ['run', 'deploy', '$_APP_NAME', 
            '--image=us-central1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/$_APP_NAME:$SHORT_SHA', 
            '--allow-unauthenticated',
            '--region', '$_REGION', '--platform', 'managed']
