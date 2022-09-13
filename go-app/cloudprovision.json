@@ -1,5 +1,5 @@
 {
-      "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
+      "name": "gcr.io/google.com/cloudsdktool/cloud-sdk:slim",
       "args": ["gcloud", "beta", "builds", "triggers", "create", "github",
                "--name=${_APP_NAME}",
                "--repo-name=cp-templates",
