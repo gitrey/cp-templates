@@ -2,6 +2,6 @@
       "name": "bash",
       "args": [
         "echo",
-        "Cloud Provision - Running a bash command to deploy selected template"
+        "Cloud Provision - Running a bash command to deploy selected template for APP=${_APP_NAME}"
       ]
 }
