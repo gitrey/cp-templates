@@ -1,11 +1,4 @@
 {
       "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
-      "args": ['gcloud', 'beta', 'builds', 'triggers', 'create', 'github',
-               '--name="${_APP_NAME}"',
-               '--repo-name=cp-templates',
-               '--repo-owner=gitrey',
-               '--branch-pattern=main',
-               '--build-config=cloudbuild.yaml',
-               '--substitutions=_APP_NAME="_APP_NAME",_REPO_NAME="cp-repo",_REGION="${_REGION}"'
-               ]
+      "args": ['gcloud', 'beta', 'builds', 'triggers', 'create', 'github','--name="${_APP_NAME}"','--repo-name=cp-templates','--repo-owner=gitrey','--branch-pattern=main','--build-config=cloudbuild.yaml','--substitutions=_APP_NAME="_APP_NAME",_REPO_NAME="cp-repo",_REGION="${_REGION}"']
 }
