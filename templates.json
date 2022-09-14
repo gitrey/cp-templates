@@ -63,5 +63,29 @@
         "required": true
       }
     ]
+  },
+  {
+    "id": 6,
+    "name": "Managing infrastructure as code with Terraform, Cloud Build, and GitOps",
+    "description": "Managing infrastructure as code with Terraform, Cloud Build, and GitOps",
+    "sourceUrl":
+    "https://github.com/gitrey/cp-templates/tree/main/iac-terraform-cloudbuild",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/iac-terraform-cloudbuild/cloudprovision.json",
+    "params": [
+      {
+        "param": "_APP_NAME",
+        "label": "Application Name",
+        "description": "Application that will be deployed.",
+        "type": "string",
+        "required": true
+      },
+      {
+        "param": "_BRANCH_NAME",
+        "label": "Branch name (Environment)",
+        "description": "Where do you want to deploy the application?",
+        "type": "string",
+        "required": true
+      }
+    ]
   }
 ]
