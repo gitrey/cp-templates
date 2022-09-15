@@ -31,10 +31,10 @@ steps:
   - '-c'
   - |
       if [ -d "environments/$_BRANCH_NAME/" ]; then
-        cd environments/$_BRANCH_NAME
+        cd environments/"$_BRANCH_NAME"
         terraform init
       else
-        for dir in environments/$_BRANCH_NAME/
+        for dir in environments/*/
         do 
           cd ${dir}   
           env=${dir%*/}
