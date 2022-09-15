@@ -34,7 +34,7 @@ steps:
         cd environments/$_BRANCH_NAME
         terraform init
       else
-        for dir in environments/*/
+        for dir in environments/$_BRANCH_NAME/
         do 
           cd ${dir}   
           env=${dir%*/}
