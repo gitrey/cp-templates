@@ -23,6 +23,8 @@ steps:
       echo "***********************"
       echo "$_BRANCH_NAME"
       echo "***********************"
+      sed -i s/PROJECT_ID/$PROJECT_ID/g iac-terraform-cloudbuild/environments/*/terraform.tfvars
+      sed -i s/PROJECT_ID/$PROJECT_ID/g iac-terraform-cloudbuild/environments/*/backend.tf
 
 - id: 'tf init'
   name: 'hashicorp/terraform:1.0.0'
