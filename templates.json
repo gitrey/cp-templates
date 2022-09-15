@@ -1,29 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "Triggering Workflows with Eventarc",
-    "description": "Triggering Workflows with Eventarc",
-    "sourceUrl":
-    "https://github.com/gitrey/cp-templates/tree/main/workflows-eventarc",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/workflows-eventarc/cloudprovision.json"
-  },
-  {
-    "id": 2,
-    "name": "Secure Serverless Apps with IAP",
-    "description": "Secure Serverless Apps with IAP",
-    "sourceUrl":
-    "https://github.com/gitrey/cp-templates/tree/main/cloudrun-iap",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/cloudrun-iap/cloudprovision.json"
-  },
-  {
-    "id": 3,
-    "name": "Triggering Cloud Functions from GCS",
-    "description": "Triggering Cloud Functions from GCS",
-    "sourceUrl":
-    "https://github.com/gitrey/cp-templates/tree/main/cloudfunctions-gcs",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/cloudfunctions-gcs/cloudprovision.json"
-  },
-  {
     "id": 4,
     "name": "Onboard Go application",
     "description": "Onboard Go application",
@@ -42,23 +18,6 @@
         "param": "_REGION",
         "label": "Application Region",
         "description": "Where do you want to deploy the application?",
-        "type": "string",
-        "required": true
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "name": "Onboard Python application",
-    "description": "Onboard Python application",
-    "sourceUrl":
-    "https://github.com/gitrey/cp-templates/tree/main/python-app",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/python-app/cloudprovision.json",
-    "params": [
-      {
-        "param": "_APP_NAME",
-        "label": "Application Name",
-        "description": "Application that will be deployed.",
         "type": "string",
         "required": true
       }
