@@ -1,0 +1,42 @@
+{
+  "cloudbuild": {
+    "name": "gcr.io/google.com/cloudsdktool/cloud-sdk:slim",
+    "args": [
+      "gcloud",
+      "beta",
+      "builds",
+      "triggers",
+      "create",
+      "github",
+      "--name=${_APP_NAME}-trigger",
+      "--repo-name=cp-templates",
+      "--repo-owner=gitrey",
+      "--branch-pattern=main",
+      "--build-config=./go-app/cloudbuild.yaml",
+      "--substitutions=_APP_NAME=${_APP_NAME},_REPO_NAME=cp-repo,_REGION=${_REGION}"
+    ]
+  },
+  "params": [
+    {
+      "param": "_APP_NAME",
+      "label": "Application Name",
+      "description": "Application that will be deployed.",
+      "type": "string",
+      "required": true
+    },
+    {
+      "param": "_REGION",
+      "label": "Application Region",
+      "description": "Where do you want to deploy the application?",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "roles": [
+    "roles/compute.admin"
+  ],
+  "apis": [
+    "run.googleapis.com",
+    "artifactregistry.googleapis.com"
+  ]
+}
