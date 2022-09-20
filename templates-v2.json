@@ -1,0 +1,10 @@
+[
+  {
+    "id": 4,
+    "name": "Onboard Go application",
+    "description": "Onboard Go application",
+    "sourceUrl":
+    "https://github.com/gitrey/cp-templates/tree/main/go-app",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/go-app/cloudprovision.json"
+  }
+]
