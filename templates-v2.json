@@ -5,6 +5,6 @@
     "description": "Onboard Go application - Cloud Run",
     "sourceUrl":
     "https://github.com/gitrey/cp-templates/tree/main/go-app",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/go-app/cloudprovision.json"
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/go-app/cloudprovision-v2.json"
   }
 ]
