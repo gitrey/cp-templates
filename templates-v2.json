@@ -1,10 +1,18 @@
 [
   {
-    "id": 4,
+    "id": 1,
     "name": "Onboard Go application - Cloud Run",
     "description": "Onboard Go application - Cloud Run",
     "sourceUrl":
     "https://github.com/gitrey/cp-templates/tree/main/go-app",
     "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/go-app/cloudprovision-v2.json"
+  },
+  {
+    "id": 2,
+    "name": "Deploy Cymbal Eats application(Inventory Service)",
+    "description": "Deploy Cymbal Eats application(Inventory Service)",
+    "sourceUrl":
+    "https://github.com/gitrey/cymbal-eats",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cymbal-eats/main/cloudprovision-v2.json"
   }
 ]
