@@ -12,6 +12,7 @@
       "--repo-name=cp-templates",
       "--repo-owner=gitrey",
       "--branch-pattern=main",
+      "--included-files=go-app/**",
       "--build-config=./go-app/cloudbuild.yaml",
       "--substitutions=_APP_NAME=${_APP_NAME},_REPO_NAME=cp-repo,_REGION=${_REGION}"
     ]
