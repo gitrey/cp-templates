@@ -14,5 +14,13 @@
     "sourceUrl":
     "https://github.com/gitrey/cymbal-eats/tree/main/inventory-service/spanner",
     "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cymbal-eats/main/inventory-service/spanner/cloudprovision-v2.json"
+  },
+  {
+    "id": 3,
+    "name": "Managing infrastructure as code with Terraform",
+    "description": "Managing infrastructure as code with Terraform, Cloud Build, and GitOps",
+    "sourceUrl":
+    "https://github.com/gitrey/cp-templates/tree/main/iac-terraform-cloudbuild",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/iac-terraform-cloudbuild/cloudprovision-v2.json"
   }
 ]
