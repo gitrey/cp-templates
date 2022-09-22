@@ -25,6 +25,8 @@ steps:
       echo "***********************"
       sed -i s/PROJECT_ID/$PROJECT_ID/g iac-terraform-cloudbuild/environments/*/terraform.tfvars
       sed -i s/PROJECT_ID/$PROJECT_ID/g iac-terraform-cloudbuild/environments/*/backend.tf
+      sed -i s/_REGION/$_REGION/g iac-terraform-cloudbuild/modules/*/main.tf
+      sed -i s/_APP_NAME/$_APP_NAME/g iac-terraform-cloudbuild/modules/*/main.tf
 
 
 - id: 'tf init'

@@ -8,7 +8,7 @@
       "--branch-pattern=main",
       "--included-files=iac-terraform-cloudbuild/**",
       "--build-config=./iac-terraform-cloudbuild/cloudbuild.yaml",
-      "--substitutions=_APP_NAME=${_APP_NAME},_BRANCH_NAME=${_BRANCH_NAME}"
+      "--substitutions=_APP_NAME=${_APP_NAME},_BRANCH_NAME=${_BRANCH_NAME},_REGION=${_REGION}"
     ]
   },
   "params": [
