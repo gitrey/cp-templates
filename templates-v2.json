@@ -12,7 +12,7 @@
     "name": "Deploy Cymbal Eats application(Inventory Service)",
     "description": "Deploy Cymbal Eats application(Inventory Service)",
     "sourceUrl":
-    "https://github.com/gitrey/cymbal-eats",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cymbal-eats/main/cloudprovision-v2.json"
+    "https://github.com/gitrey/cymbal-eats/tree/main/inventory-service/spanner",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cymbal-eats/main/inventory-service/spanner/cloudprovision-v2.json"
   }
 ]
