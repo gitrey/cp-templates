@@ -25,6 +25,13 @@
       "description": "Where do you want to deploy the application?",
       "type": "string",
       "required": true
+    },
+    {
+      "param": "_REGION",
+      "label": "Application Region",
+      "description": "Where do you want to deploy the application?",
+      "type": "string",
+      "required": true
     }
   ],
   "roles": [
