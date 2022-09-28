@@ -40,12 +40,5 @@
       "type": "string",
       "required": true
     }
-  ],
-  "roles": [
-    "roles/compute.admin"
-  ],
-  "apis": [
-    "run.googleapis.com",
-    "artifactregistry.googleapis.com"
   ]
 }
