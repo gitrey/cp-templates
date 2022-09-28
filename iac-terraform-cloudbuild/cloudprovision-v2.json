@@ -32,6 +32,13 @@
       "description": "Where do you want to deploy the application?",
       "type": "string",
       "required": true
+    },
+    {
+      "param": "_INSTANCE_GIT_REPO",
+      "label": "Instance GitHub Repository Name",
+      "description": "Instance GitHub Repository Name",
+      "type": "string",
+      "required": true
     }
   ],
   "roles": [
