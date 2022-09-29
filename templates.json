@@ -1,53 +1,26 @@
 [
   {
-    "id": 4,
+    "id": 1,
     "name": "Onboard Go application - Cloud Run",
     "description": "Onboard Go application - Cloud Run",
     "sourceUrl":
     "https://github.com/gitrey/cp-templates/tree/main/go-app",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/go-app/cloudprovision.json",
-    "params": [
-      {
-        "param": "_APP_NAME",
-        "label": "Application Name",
-        "description": "Application that will be deployed.",
-        "type": "string",
-        "required": true
-      },
-      {
-        "param": "_REGION",
-        "label": "Application Region",
-        "description": "Where do you want to deploy the application?",
-        "type": "string",
-        "required": true
-      }
-    ]
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/go-app/cloudprovision.json"
   },
   {
-    "id": 6,
-    "name": "Managing infrastructure as code with Terraform, Cloud Build, and GitOps",
+    "id": 2,
+    "name": "Deploy Cymbal Eats application(Inventory Service)",
+    "description": "Deploy Cymbal Eats application(Inventory Service)",
+    "sourceUrl":
+    "https://github.com/gitrey/cymbal-eats/tree/main/inventory-service/spanner",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cymbal-eats/main/inventory-service/spanner/cloudprovision.json"
+  },
+  {
+    "id": 3,
+    "name": "Managing infrastructure as code with Terraform",
     "description": "Managing infrastructure as code with Terraform, Cloud Build, and GitOps",
     "sourceUrl":
     "https://github.com/gitrey/cp-templates/tree/main/iac-terraform-cloudbuild",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/iac-terraform-cloudbuild/cloudprovision.json",
-    "params": [
-      {
-        "param": "_APP_NAME",
-        "label": "Application Name",
-        "description": "Application that will be deployed.",
-        "type": "string",
-        "required": true
-      },
-      {
-        "param": "_BRANCH_NAME",
-        "label": "Branch name (Environment)",
-        "description": "Where do you want to deploy the application?",
-        "type": "string",
-        "required": true
-      }
-    ],
-    "roles": [
-      "roles/compute.admin"
-    ]
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/iac-terraform-cloudbuild/cloudprovision.json"
   }
 ]

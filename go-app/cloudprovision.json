@@ -1,11 +1,43 @@
 {
-      "name": "gcr.io/google.com/cloudsdktool/cloud-sdk:slim",
-      "args": ["gcloud", "beta", "builds", "triggers", "create", "github",
-               "--name=${_APP_NAME}-trigger",
-               "--repo-name=cp-templates",
-               "--repo-owner=gitrey",
-               "--branch-pattern=main",
-               "--build-config=./go-app/cloudbuild.yaml",
-               "--substitutions=_APP_NAME=${_APP_NAME},_REPO_NAME=cp-repo,_REGION=${_REGION}"
-              ]
+  "cloudbuild": {
+    "name": "gcr.io/google.com/cloudsdktool/cloud-sdk:slim",
+    "args": [
+      "gcloud",
+      "beta",
+      "builds",
+      "triggers",
+      "create",
+      "github",
+      "--name=${_APP_NAME}-trigger",
+      "--repo-name=cp-templates",
+      "--repo-owner=gitrey",
+      "--branch-pattern=main",
+      "--included-files=go-app/**",
+      "--build-config=./go-app/cloudbuild.yaml",
+      "--substitutions=_APP_NAME=${_APP_NAME},_REPO_NAME=cp-repo,_REGION=${_REGION},_INSTANCE_GIT_REPO=${_INSTANCE_GIT_REPO}"
+    ]
+  },
+  "params": [
+    {
+      "param": "_APP_NAME",
+      "label": "Application Name",
+      "description": "Application that will be deployed.",
+      "type": "string",
+      "required": true
+    },
+    {
+      "param": "_REGION",
+      "label": "Application Region",
+      "description": "Where do you want to deploy the application?",
+      "type": "string",
+      "required": true
+    },
+    {
+      "param": "_INSTANCE_GIT_REPO",
+      "label": "Instance GitHub Repository Name",
+      "description": "Instance GitHub Repository Name",
+      "type": "string",
+      "required": true
+    }
+  ]
 }
