@@ -14,7 +14,7 @@
       "--branch-pattern=main",
       "--included-files=go-app/**",
       "--build-config=./go-app/cloudbuild.yaml",
-      "--substitutions=_APP_NAME=${_APP_NAME},_REPO_NAME=cp-repo,_REGION=${_REGION},_INSTANCE_GIT_REPO=${_INSTANCE_GIT_REPO}"
+      "--substitutions=_APP_NAME=${_APP_NAME},_REPO_NAME=cp-repo,_REGION=${_REGION},_INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER},_INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}"
     ]
   },
   "params": [
