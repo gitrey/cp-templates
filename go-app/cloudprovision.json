@@ -48,8 +48,8 @@
     },
     {
       "param": "_INSTANCE_GIT_REPO_TOKEN",
-      "label": "Instance GitHub Repository Name",
-      "description": "Instance GitHub Repository Name",
+      "label": "Instance GitHub Repository Token",
+      "description": "Instance GitHub Repository Token",
       "type": "string",
       "required": true,
       "display": false
