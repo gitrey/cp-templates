@@ -3,7 +3,9 @@
     "id":"provision",
     "name": "gcr.io/cloud-builders/git",
     "env": [
-        "_INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER}",
+      "_APP_NAME=${_APP_NAME}",
+      "_REGION=${_REGION}",
+      "_INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER}",
         "_INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}",
         "_INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
         "BAR=$PROJECT_ID"
