@@ -1,0 +1,36 @@
+{
+  "cloudbuild": {
+    "id":"provision",
+    "name": "gcr.io/cloud-builders/git",
+    "env": [
+        "_INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER}",
+        "_INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}",
+        "_INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
+        "BAR=$PROJECT_ID"
+      ],
+    "script": "provision.sh"
+  },
+  "params": [
+    {
+      "param": "_APP_NAME",
+      "label": "Application Name",
+      "description": "Application that will be deployed.",
+      "type": "string",
+      "required": true
+    },
+    {
+      "param": "_REGION",
+      "label": "Application Region",
+      "description": "Where do you want to deploy the application?",
+      "type": "string",
+      "required": true
+    },
+    {
+      "param": "_INSTANCE_GIT_REPO",
+      "label": "Instance GitHub Repository Name",
+      "description": "Instance GitHub Repository Name",
+      "type": "string",
+      "required": true
+    }
+  ]
+}
