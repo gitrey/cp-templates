@@ -33,10 +33,17 @@
       "required": true
     },
     {
-      "param": "_INSTANCE_GIT_REPO",
+      "param": "_INSTANCE_GIT_REPO_NAME",
       "label": "Instance GitHub Repository Name",
       "description": "Instance GitHub Repository Name",
       "type": "string",
+      "required": true
+    },
+    {
+      "param": "_INSTANCE_GIT_REPO_OWNER",
+      "label": "Instance GitHub Repository Owner",
+      "description": "Instance GitHub Repository Owner",
+      "type": "dropdown",
       "required": true
     }
   ]
