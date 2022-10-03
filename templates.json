@@ -27,7 +27,7 @@
     "name": "CICD Pipeline",
     "description": "End to end CICD Pipeline",
     "sourceUrl":
-    "https://github.com/gitrey/cp-templates/tree/main/cicd-pipeline",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/cicd-pipeline/cloudprovision.json"
+    "https://github.com/gitrey/cp-templates/tree/cicd-template/cicd-pipeline",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/cicd-template/cicd-pipeline/cloudprovision.json"
   }
 ]
