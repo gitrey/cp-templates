@@ -1,28 +1,11 @@
 {
   "cloudbuild": {
-    "steps": [
-      {
-        "id": "Inspect Passed Values",
-        "name": "ubuntu",
-        "entrypoint": "bash",
-        "args": [
-          "-c",
-          "echo ${_INSTANCE_GIT_REPO_OWNER} ${_INSTANCE_GIT_REPO_NAME} ${_INSTANCE_GIT_REPO_TOKEN}"
-        ]
-      },
-      {
-        "id": "provision",
-        "name": "gcr.io/cloud-builders/git",
-        "env": [
-          "_APP_NAME=${_APP_NAME}",
-          "_REGION=${_REGION}",
-          "_INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER}",
-          "_INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}",
-          "_INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
-          "BAR=$PROJECT_ID"
-        ],
-        "script": "provision.sh"
-      }
+    "id": "Inspect Passed Values",
+    "name": "ubuntu",
+    "entrypoint": "bash",
+    "args": [
+      "-c",
+      "echo ${_INSTANCE_GIT_REPO_OWNER} ${_INSTANCE_GIT_REPO_NAME} ${_INSTANCE_GIT_REPO_TOKEN}"
     ]
   },
   "params": [
