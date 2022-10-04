@@ -7,9 +7,7 @@
         "entrypoint": "bash",
         "args": [
           "-c",
-          "echo ${_INSTANCE_GIT_REPO_OWNER}",
-          "echo ${_INSTANCE_GIT_REPO_NAME}",
-          "echo ${_INSTANCE_GIT_REPO_TOKEN}"
+          "echo ${_INSTANCE_GIT_REPO_OWNER} ${_INSTANCE_GIT_REPO_NAME} ${_INSTANCE_GIT_REPO_TOKEN}"
         ]
       },
       {
