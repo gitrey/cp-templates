@@ -6,10 +6,10 @@
     "env": [
       "_APP_NAME=${_APP_NAME}",
       "_REGION=${_REGION}",
-      
-        "_INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}",
-
-        "BAR=$PROJECT_ID"
+      "_INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER}",
+      "_INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}",
+      "_INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
+      "BAR=$PROJECT_ID"
       ],
     "script": "provision.sh"
   },
@@ -29,11 +29,26 @@
       "required": true
     },
     {
-      "param": "_INSTANCE_GIT_REPO",
+      "param": "_INSTANCE_GIT_REPO_OWNER",
+      "label": "Instance GitHub Repository Owner",
+      "description": "Instance GitHub Repository Owner",
+      "type": "dropdown",
+      "required": true
+    },
+    {
+      "param": "_INSTANCE_GIT_REPO_NAME",
       "label": "Instance GitHub Repository Name",
       "description": "Instance GitHub Repository Name",
       "type": "string",
       "required": true
+    },
+    {
+      "param": "_INSTANCE_GIT_REPO_TOKEN",
+      "label": "Instance GitHub Repository Token",
+      "description": "Instance GitHub Repository Token",
+      "type": "string",
+      "required": true,
+      "display": false
     }
   ]
 }
