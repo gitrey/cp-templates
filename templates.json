@@ -22,7 +22,8 @@
     "sourceUrl":
     "https://github.com/gitrey/cp-templates/tree/main/iac-terraform-cloudbuild",
     "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/iac-terraform-cloudbuild/cloudprovision.json"
-  },  {
+  },
+  {
     "id": 4,
     "name": "CICD Pipeline",
     "description": "End to end CICD Pipeline",
