@@ -2,7 +2,7 @@
   "cloudbuild": {
     "steps": [
       {
-        "id": "Inspect Values 2",
+        "id": "Inspect Values 1",
         "name": "ubuntu",
         "entrypoint": "bash",
         "args": [
