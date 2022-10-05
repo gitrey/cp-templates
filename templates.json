@@ -30,5 +30,13 @@
     "sourceUrl":
     "https://github.com/gitrey/cp-templates/tree/cicd-template/cicd-pipeline",
     "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/cicd-template/cicd-pipeline/cloudprovision.json"
+  },
+  {
+    "id": 5,
+    "name": "CICD Pipeline - Multi Step",
+    "description": "End to end CICD Pipeline - Multi Step",
+    "sourceUrl":
+    "https://github.com/gitrey/cp-templates/tree/cicd-template/cicd-pipeline-multistep",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/cicd-template/cicd-pipeline-multistep/cloudprovision.json"
   }
 ]
