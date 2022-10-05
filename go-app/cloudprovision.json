@@ -1,20 +1,24 @@
 {
   "cloudbuild": {
-    "name": "gcr.io/google.com/cloudsdktool/cloud-sdk:slim",
-    "args": [
-      "gcloud",
-      "beta",
-      "builds",
-      "triggers",
-      "create",
-      "github",
-      "--name=${_APP_NAME}-trigger",
-      "--repo-name=cp-templates",
-      "--repo-owner=gitrey",
-      "--branch-pattern=main",
-      "--included-files=go-app/**",
-      "--build-config=./go-app/cloudbuild.yaml",
-      "--substitutions=_APP_NAME=${_APP_NAME},_REPO_NAME=cp-repo,_REGION=${_REGION},_INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER},_INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME},_INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}"
+    "steps": [
+      {
+        "name": "gcr.io/google.com/cloudsdktool/cloud-sdk:slim",
+        "args": [
+          "gcloud",
+          "beta",
+          "builds",
+          "triggers",
+          "create",
+          "github",
+          "--name=${_APP_NAME}-trigger",
+          "--repo-name=cp-templates",
+          "--repo-owner=gitrey",
+          "--branch-pattern=main",
+          "--included-files=go-app/**",
+          "--build-config=./go-app/cloudbuild.yaml",
+          "--substitutions=_APP_NAME=${_APP_NAME},_REPO_NAME=cp-repo,_REGION=${_REGION},_INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER},_INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME},_INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}"
+        ]
+      }
     ]
   },
   "params": [
