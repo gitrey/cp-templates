@@ -3,24 +3,105 @@
     "id": 1,
     "name": "Onboard Go application - Cloud Run",
     "description": "Onboard Go application - Cloud Run",
-    "sourceUrl":
-    "https://github.com/gitrey/cp-templates/tree/main/go-app",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/go-app/cloudprovision.json"
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/go-app",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/go-app/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "cloudrun",
+      "go"
+    ],
+    "category": "application"
   },
   {
     "id": 2,
     "name": "Deploy Cymbal Eats application(Inventory Service)",
     "description": "Deploy Cymbal Eats application(Inventory Service)",
-    "sourceUrl":
-    "https://github.com/gitrey/cymbal-eats/tree/main/inventory-service/spanner",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cymbal-eats/main/inventory-service/spanner/cloudprovision.json"
+    "sourceUrl": "https://github.com/gitrey/cymbal-eats/tree/main/inventory-service/spanner",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cymbal-eats/main/inventory-service/spanner/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "cloudrun",
+      "spanner",
+      "go"
+    ],
+    "category": "solution"
   },
   {
     "id": 3,
     "name": "Managing infrastructure as code with Terraform",
     "description": "Managing infrastructure as code with Terraform, Cloud Build, and GitOps",
-    "sourceUrl":
-    "https://github.com/gitrey/cp-templates/tree/main/iac-terraform-cloudbuild",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/iac-terraform-cloudbuild/cloudprovision.json"
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/solution/iac-terraform-cloudbuild",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/solution/iac-terraform-cloudbuild/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "terraform",
+      "cloudbuild",
+      "compute"
+    ],
+    "category": "solution"
+  },
+  {
+    "id": 4,
+    "name": "PubSub",
+    "description": "Create PubSub instance",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/pubsub",
+    "cloudProvisionConfigUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/pubsub/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "pubsub"
+    ],
+    "category": "infra"
+  },
+  {
+    "id": 5,
+    "name": "CloudSQL (MySQL)",
+    "description": "Create CloudSQL MySQL instance",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/pubsub",
+    "cloudProvisionConfigUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/cloudsql-mysql/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "cloudsql",
+      "mysql"
+    ],
+    "category": "infra"
+  },
+  {
+    "id": 6,
+    "name": "CloudSQL (PostgreSQL)",
+    "description": "Create CloudSQL PostgreSQL instance",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/cloudsql-postgresql",
+    "cloudProvisionConfigUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/cloudsql-postgresql/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "cloudsql",
+      "postgresql"
+    ],
+    "category": "infra"
+  },
+  {
+    "id": 7,
+    "name": "Google Cloud Storage",
+    "description": "Create Google Cloud Storage bucket",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/gcs",
+    "cloudProvisionConfigUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/gcs/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "gcs",
+      "storage"
+    ],
+    "category": "infra"
+  },
+  {
+    "id": 8,
+    "name": "Onboard Java application - Cloud Run",
+    "description": "Onboard Java application - Cloud Run",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/java-app",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/java-app/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "cloudrun",
+      "java"
+    ],
+    "category": "application"
   }
 ]
