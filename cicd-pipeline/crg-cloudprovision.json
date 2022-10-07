@@ -78,8 +78,8 @@
     },
     {
       "param": "_API_KEY",
-      "label": "GCP Api Key",
-      "description": "GCP Api Key",
+      "label": "GCP API Key",
+      "description": "GCP API Key",
       "type": "string",
       "required": true,
       "display": false
