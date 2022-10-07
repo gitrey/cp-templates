@@ -4,6 +4,7 @@ steps:
       - '-c'
       - |
         IFS='/' read -a array <<< "${_REF}"
+        echo ${_REF}
         echo 0 ${array[0]}
         echo 1 ${array[1]}
         echo 2 ${array[2]}
