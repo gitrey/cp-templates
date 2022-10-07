@@ -44,11 +44,11 @@ printf 'Creating application: %s \n' $APP_NAME
 
 # # Create an instance of the template.
 # Clone the template repo
-git clone https://github.com/GoogleCloudPlatform/software-delivery-workshop.git plat
-mv plat/delivery-platform/resources/repos/app-templates ./
-rm -rf plat
+#git clone https://github.com/GoogleCloudPlatform/software-delivery-workshop.git plat
+#mv plat/delivery-platform/resources/repos/app-templates ./
+#rm -rf plat
 rm -rf app-templates/.git
-cd app-templates/sample
+cd ./cp-templates/cicd-pipeline/app-templates/sample
 
 # Swap Variables
 for template in $(find . -name '*.tmpl'); do envsubst < ${template} > ${template%.*}; done
