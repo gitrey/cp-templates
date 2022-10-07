@@ -11,25 +11,33 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+# [START cloudbuild_go_yaml]
+# [START cloudbuild_go_test_yaml]
 steps:
-- name: gcr.io/cloud-builders/git
-  args:
-  - '-c'
-  - |
-    IFS='/' read -a array <<< "${_REF}"
-    echo 0 ${array[0]}
-    echo 1 ${array[1]}
-    echo 2 ${array[2]}
-    echo REPO=${_APP_REPO}
-    echo BRANCH_NAME=${array[2]}
-    if ((${array[1]} == "tags")); then
-      echo "TAG " ${BRANCH_NAME}
-    elif ((${array[2]} == "master")); then
-      echo "master"
-    else 
-      echo ${BRANCH_NAME}
-    fi
-    echo done
-  id: clone-app
-  entrypoint: bash
+# [START cloudbuild_go_image_yaml]
+# Docker Build
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t',
+         'us-central1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/$_APP_NAME:$SHORT_SHA', './go-app']
+# [END cloudbuild_go_image_yaml]
+
+# [START cloudbuild_go_push_yaml]
+# Docker push to Google Artifact Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/$_APP_NAME:$SHORT_SHA']
+# [END cloudbuild_go_push_yaml]
+
+# [START cloudbuild_go_deploy_yaml]
+# Deploy to Cloud Run
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['run', 'deploy', '$_APP_NAME',
+         '--image=us-central1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/$_APP_NAME:$SHORT_SHA',
+         '--allow-unauthenticated',
+         '--region', '$_REGION', '--platform', 'managed']
+# [END cloudbuild_go_deploy_yaml]
+
+
+# Store images in Google Artifact Registry
+images:
+- us-central1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/$_APP_NAME:$SHORT_SHA
+# [END cloudbuild_go_yaml]
