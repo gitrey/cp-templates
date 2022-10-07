@@ -22,8 +22,8 @@ steps:
         else 
           echo ${BRANCH_NAME}
         fi
-        echo "git clone -b $BRANCH_NAME $REPO"
-        git clone -b $BRANCH_NAME $REPO
+        echo "git clone -b ${array[2]} ${_APP_REPO}"
+        git clone -b ${array[2]} ${_APP_REPO}
         echo done
     id: clone-app
     entrypoint: bash
