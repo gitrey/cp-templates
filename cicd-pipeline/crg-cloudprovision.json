@@ -11,7 +11,7 @@
         ]
       },
       {
-        "id": "clone",
+        "id": "ubuntu",
         "name": "gcr.io/cloud-builders/git",
         "entrypoint": "bash",
         "args": [
@@ -21,7 +21,7 @@
       },
       {
         "id": "createApp",
-        "name": "gcr.io/cloud-builders/git",
+        "name": "ubuntu",
         "env": [
           "APP_NAME=${_APP_NAME}",
           "REGION=${_REGION}",
