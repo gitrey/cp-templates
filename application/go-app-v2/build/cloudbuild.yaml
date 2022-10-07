@@ -28,7 +28,7 @@ steps:
 
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t',
-         'us-central1-docker.pkg.dev/$PROJECT_ID/cp-repo/$_APP_NAME:$SHORT_SHA', './cp-templates/application/go-app-v2']
+         'us-central1-docker.pkg.dev/$PROJECT_ID/cp-repo/$_APP_NAME:$SHORT_SHA', './$_APP_NAME']
 
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/cp-repo/$_APP_NAME:$SHORT_SHA']
