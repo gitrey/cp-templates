@@ -30,7 +30,8 @@ echo INSTANCE_GIT_REPO_TOKEN=${INSTANCE_GIT_REPO_TOKEN}
 echo GIT_TOKEN=$GIT_TOKEN
 
 
-git config --global user.email $(gcloud config get-value account)
+#git config --global user.email $(gcloud config get-value account)
+git config --global user.email ${INSTANCE_GIT_REPO_OWNER}
 git config --global user.name ${INSTANCE_GIT_REPO_OWNER}
 
 
