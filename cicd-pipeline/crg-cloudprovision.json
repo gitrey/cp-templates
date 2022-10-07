@@ -30,7 +30,7 @@
           "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}",
           "API_KEY=${_API_KEY}"
         ],
-        "script": "./createApp.sh"
+        "script": "./cp-templates/cicd-pipeline/createApp.sh"
       },
       {
         "id": "createGitWebhook",
@@ -44,7 +44,7 @@
           "REGION=${_REGION}",
           "API_KEY=${_API_KEY}"
         ],
-        "script": "./createWebhook.sh"
+        "script": "./cp-templates/cicd-pipeline/createWebhook.sh"
       }
     ]
   },
