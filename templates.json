@@ -133,8 +133,8 @@
     "name": "CI/CD Pipeline for GO application",
     "description": "CI/CD Pipeline for GO application",
     "sourceUrl":
-    "https://github.com/gitrey/cp-templates/tree/main/cicd-pipeline",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/cicd-pipeline/crg-cloudprovision.json",
+    "https://github.com/gitrey/cp-templates/tree/main/application/go-app-cicd",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/application/go-app-cicd/crg-cloudprovision.json",
     "version": "1.0.0",
     "tags": [
       "cloudrun",
