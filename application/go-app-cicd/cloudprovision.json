@@ -7,15 +7,6 @@
         "entrypoint": "bash",
         "args": [
           "-c",
-          "git clone https://github.com/gitrey/cp-templates.git"
-        ]
-      },
-      {
-        "id": "ubuntu",
-        "name": "gcr.io/cloud-builders/git",
-        "entrypoint": "bash",
-        "args": [
-          "-c",
           "git clone https://github.com/gitrey/cp-templates.git",
           "git clone https://github.com/cgrant/cp-utils.git utils"
         ]
