@@ -11,7 +11,7 @@
         ]
       },
       {
-        "id": "ubuntu",
+        "id": "clone cp-templates",
         "name": "gcr.io/cloud-builders/git",
         "entrypoint": "bash",
         "args": [
@@ -20,7 +20,7 @@
         ]
       },
       {
-        "id": "ubuntu",
+        "id": "clone cp-utils",
         "name": "gcr.io/cloud-builders/git",
         "entrypoint": "bash",
         "args": [
