@@ -3,8 +3,8 @@
     "id": 1,
     "name": "Onboard Go application - Cloud Run",
     "description": "Onboard Go application - Cloud Run",
-    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/feature/adding-template-metadata/application/go-app",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/feature/adding-template-metadata/application/go-app/cloudprovision.json",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/application/go-app",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/application/go-app/cloudprovision.json",
     "version": "1.0.0",
     "tags": [
       "cloudrun",
@@ -36,8 +36,8 @@
     "id": 3,
     "name": "Managing infrastructure as code with Terraform",
     "description": "Managing infrastructure as code with Terraform, Cloud Build, and GitOps",
-    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/feature/adding-template-metadata/solution/iac-terraform-cloudbuild",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/feature/adding-template-metadata/solution/iac-terraform-cloudbuild/cloudprovision.json",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/solution/iac-terraform-cloudbuild",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/solution/iac-terraform-cloudbuild/cloudprovision.json",
     "version": "1.0.0",
     "tags": [
       "terraform",
@@ -53,8 +53,8 @@
     "id": 4,
     "name": "PubSub",
     "description": "Create PubSub instance",
-    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/feature/adding-template-metadata/infra/pubsub",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/feature/adding-template-metadata/infra/pubsub/cloudprovision.json",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/pubsub",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/infra/pubsub/cloudprovision.json",
     "version": "1.0.0",
     "tags": [
       "pubsub"
@@ -68,8 +68,8 @@
     "id": 5,
     "name": "CloudSQL (MySQL)",
     "description": "Create CloudSQL MySQL instance",
-    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/feature/adding-template-metadata/infra/pubsub",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/feature/adding-template-metadata/infra/cloudsql-mysql/cloudprovision.json",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/pubsub",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/infra/cloudsql-mysql/cloudprovision.json",
     "version": "1.0.0",
     "tags": [
       "cloudsql",
@@ -84,8 +84,8 @@
     "id": 6,
     "name": "CloudSQL (PostgreSQL)",
     "description": "Create CloudSQL PostgreSQL instance",
-    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/feature/adding-template-metadata/infra/cloudsql-postgresql",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/feature/adding-template-metadata/infra/cloudsql-postgresql/cloudprovision.json",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/cloudsql-postgresql",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/infra/cloudsql-postgresql/cloudprovision.json",
     "version": "1.0.0",
     "tags": [
       "cloudsql",
@@ -100,8 +100,8 @@
     "id": 7,
     "name": "Google Cloud Storage",
     "description": "Create Google Cloud Storage bucket",
-    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/feature/adding-template-metadata/main/infra/gcs",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/feature/adding-template-metadata/infra/gcs/cloudprovision.json",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/gcs",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/infra/gcs/cloudprovision.json",
     "version": "1.0.0",
     "tags": [
       "gcs",
@@ -116,8 +116,8 @@
     "id": 8,
     "name": "Onboard Java application - Cloud Run",
     "description": "Onboard Java application - Cloud Run",
-    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/feature/adding-template-metadata/java-app",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/feature/adding-template-metadata/application/java-app/cloudprovision.json",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/application/java-app",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/application/java-app/cloudprovision.json",
     "version": "1.0.0",
     "tags": [
       "cloudrun",
@@ -125,6 +125,23 @@
     ],
     "category": "application",
     "lastModified": "2022-09-29T16:19:04.000Z",
+    "owner": "Google Cloud Solutions Architecture Team",
+    "email": "sa-cloud-provision-templates@google.com"
+  },
+  {
+    "id": 9,
+    "name": "CI/CD Pipeline for GO application",
+    "description": "CI/CD Pipeline for GO application",
+    "sourceUrl":
+    "https://github.com/gitrey/cp-templates/tree/main/cicd-pipeline",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/cicd-pipeline/crg-cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "cloudrun",
+      "go"
+    ],
+    "category": "application",
+    "lastModified": "2022-09-20T10:10:04.000Z",
     "owner": "Google Cloud Solutions Architecture Team",
     "email": "sa-cloud-provision-templates@google.com"
   }
