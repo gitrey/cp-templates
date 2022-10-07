@@ -1,0 +1,49 @@
+{
+    "substitutions": {
+      "_APP_NAME": "myApp",
+  
+      "_INSTANCE_GIT_REPO_TOKEN": "",
+      "_INSTANCE_GIT_REPO_NAME": "",
+      "_INSTANCE_GIT_REPO_OWNER": ""
+    },
+    "steps": [
+      
+        {
+            "id":"clone",
+            "name": "gcr.io/cloud-builders/git",
+            "entrypoint": "bash",
+            "args": [
+            "-c",
+            "git clone https://github.com/cgrant/build-templates.git"
+            ]
+          },
+          {
+            "id":"createApp",
+            "name": "gcr.io/cloud-builders/git",
+    
+            "env": [   
+                "APP_NAME=${_APP_NAME}",
+                "INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
+                "INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER}",
+                "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}"
+              ],
+  
+              "script": "./createApp.sh"
+          },
+          {
+            "id":"createGitWebhook",
+            "name": "gcr.io/cloud-builders/gcloud",
+    
+            "env": [
+                "PROJECT_ID=$PROJECT_ID",
+                "APP_NAME=${_APP_NAME}",
+                "GIT_USER=${_INSTANCE_GIT_REPO_OWNER}",
+                "GIT_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
+  
+                "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}"
+  
+              ],
+              "script": "./createWebhook.sh"
+          }
+    ]
+  }
