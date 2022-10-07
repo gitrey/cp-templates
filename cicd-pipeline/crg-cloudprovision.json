@@ -15,9 +15,11 @@
         "name": "gcr.io/cloud-builders/git",
         "env": [
           "APP_NAME=${_APP_NAME}",
+          "REGION=${_REGION}",
           "INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
           "INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER}",
-          "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}"
+          "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}",
+          "API_KEY=${_API_KEY}"
         ],
         "script": "./createApp.sh"
       },
@@ -29,7 +31,9 @@
           "APP_NAME=${_APP_NAME}",
           "GIT_USER=${_INSTANCE_GIT_REPO_OWNER}",
           "GIT_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
-          "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}"
+          "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}",
+          "REGION=${_REGION}",
+          "API_KEY=${_API_KEY}"
         ],
         "script": "./createWebhook.sh"
       }
