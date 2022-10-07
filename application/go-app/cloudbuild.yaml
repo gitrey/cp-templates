@@ -18,7 +18,7 @@ steps:
 # Docker Build
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t',
-         'us-central1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/$_APP_NAME:$SHORT_SHA', './go-app']
+         'us-central1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/$_APP_NAME:$SHORT_SHA', './application/go-app']
 # [END cloudbuild_go_image_yaml]
 
 # [START cloudbuild_go_push_yaml]
