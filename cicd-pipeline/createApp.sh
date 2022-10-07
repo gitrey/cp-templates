@@ -48,7 +48,7 @@ git clone https://github.com/GoogleCloudPlatform/software-delivery-workshop.git 
 mv plat/delivery-platform/resources/repos/app-templates ./
 rm -rf plat
 rm -rf app-templates/.git
-cd app-templates/golang
+cd app-templates/sample
 
 # Swap Variables
 for template in $(find . -name '*.tmpl'); do envsubst < ${template} > ${template%.*}; done
