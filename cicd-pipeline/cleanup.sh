@@ -15,7 +15,7 @@ gcloud secrets delete ${SECRET_NAME} -q
 export GIT_TOKEN=${INSTANCE_GIT_REPO_TOKEN}
 export GIT_USERNAME=${INSTANCE_GIT_REPO_OWNER}
 export BASE_DIR=${PWD}
-export GIT_CMD=${BASE_DIR}/util/git/gh.sh
-export GIT_ASKPASS=${BASE_DIR}/util/git/git-ask-pass.sh
+export GIT_CMD=${BASE_DIR}/cp-templates/cicd-pipeline/util/git/gh.sh
+export GIT_ASKPASS=${BASE_DIR}/cp-templates/cicd-pipeline/util/git/git-ask-pass.sh
 ${GIT_CMD} delete ${APP_NAME} 
 
