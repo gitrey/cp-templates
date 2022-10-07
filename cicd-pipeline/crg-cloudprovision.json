@@ -1,49 +1,84 @@
 {
-    "substitutions": {
-      "_APP_NAME": "myApp",
-  
-      "_INSTANCE_GIT_REPO_TOKEN": "",
-      "_INSTANCE_GIT_REPO_NAME": "",
-      "_INSTANCE_GIT_REPO_OWNER": ""
-    },
+  "cloudbuild": {
     "steps": [
-      
-        {
-            "id":"clone",
-            "name": "gcr.io/cloud-builders/git",
-            "entrypoint": "bash",
-            "args": [
-            "-c",
-            "git clone https://github.com/cgrant/build-templates.git"
-            ]
-          },
-          {
-            "id":"createApp",
-            "name": "gcr.io/cloud-builders/git",
-    
-            "env": [   
-                "APP_NAME=${_APP_NAME}",
-                "INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
-                "INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER}",
-                "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}"
-              ],
-  
-              "script": "./createApp.sh"
-          },
-          {
-            "id":"createGitWebhook",
-            "name": "gcr.io/cloud-builders/gcloud",
-    
-            "env": [
-                "PROJECT_ID=$PROJECT_ID",
-                "APP_NAME=${_APP_NAME}",
-                "GIT_USER=${_INSTANCE_GIT_REPO_OWNER}",
-                "GIT_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
-  
-                "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}"
-  
-              ],
-              "script": "./createWebhook.sh"
-          }
+      {
+        "id": "clone",
+        "name": "gcr.io/cloud-builders/git",
+        "entrypoint": "bash",
+        "args": [
+          "-c",
+          "git clone https://github.com/cgrant/build-templates.git"
+        ]
+      },
+      {
+        "id": "createApp",
+        "name": "gcr.io/cloud-builders/git",
+        "env": [
+          "APP_NAME=${_APP_NAME}",
+          "INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
+          "INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER}",
+          "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}"
+        ],
+        "script": "./createApp.sh"
+      },
+      {
+        "id": "createGitWebhook",
+        "name": "gcr.io/cloud-builders/gcloud",
+        "env": [
+          "PROJECT_ID=$PROJECT_ID",
+          "APP_NAME=${_APP_NAME}",
+          "GIT_USER=${_INSTANCE_GIT_REPO_OWNER}",
+          "GIT_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
+          "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}"
+        ],
+        "script": "./createWebhook.sh"
+      }
     ]
-  }
+  },
+  "params": [
+    {
+      "param": "_APP_NAME",
+      "label": "Application Name",
+      "description": "Application that will be deployed.",
+      "type": "string",
+      "required": true
+    },
+    {
+      "param": "_REGION",
+      "label": "Application Region",
+      "description": "Where do you want to deploy the application?",
+      "type": "string",
+      "required": true
+    },
+    {
+      "param": "_INSTANCE_GIT_REPO_OWNER",
+      "label": "Instance GitHub Repository Owner",
+      "description": "Instance GitHub Repository Owner",
+      "type": "dropdown",
+      "required": true
+    },
+    {
+      "param": "_INSTANCE_GIT_REPO_NAME",
+      "label": "Instance GitHub Repository Name",
+      "description": "Instance GitHub Repository Name",
+      "type": "string",
+      "required": true
+    },
+    {
+      "param": "_INSTANCE_GIT_REPO_TOKEN",
+      "label": "Instance GitHub Repository Token",
+      "description": "Instance GitHub Repository Token",
+      "type": "string",
+      "required": true,
+      "display": false
+    },
+    {
+      "param": "_API_KEY",
+      "label": "GCP Api Key",
+      "description": "GCP Api Key",
+      "type": "string",
+      "required": true,
+      "display": false
+    }
+  ]
+}
