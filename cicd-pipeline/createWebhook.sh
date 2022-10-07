@@ -22,7 +22,7 @@ export API_KEY_VALUE=${API_KEY}
 
 
 export WORK_DIR=${PWD}
-export GIT_CMD=${WORK_DIR}/util/git/gh.sh
+export GIT_CMD=${WORK_DIR}/cp-templates/cicd-pipeline/util/git/gh.sh
 export GIT_BASE_URL=https://${GIT_USER}@github.com/${GIT_USER}
 
 export APP_INSTANCE_REPO_LOCATION=https://github.com/${GIT_USERNAME}/${APP_NAME}
