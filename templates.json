@@ -3,24 +3,129 @@
     "id": 1,
     "name": "Onboard Go application - Cloud Run",
     "description": "Onboard Go application - Cloud Run",
-    "sourceUrl":
-    "https://github.com/gitrey/cp-templates/tree/main/go-app",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/go-app/cloudprovision.json"
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/feature/adding-template-metadata/application/go-app",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/feature/adding-template-metadata/application/go-app/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "cloudrun",
+      "go"
+    ],
+    "category": "application",
+    "lastModified": "2022-09-20T10:10:04.000Z",
+    "owner": "Google Cloud Solutions Architecture Team",
+    "email": "sa-cloud-provision-templates@google.com"
   },
   {
     "id": 2,
     "name": "Deploy Cymbal Eats application(Inventory Service)",
     "description": "Deploy Cymbal Eats application(Inventory Service)",
-    "sourceUrl":
-    "https://github.com/gitrey/cymbal-eats/tree/main/inventory-service/spanner",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cymbal-eats/main/inventory-service/spanner/cloudprovision.json"
+    "sourceUrl": "https://github.com/gitrey/cymbal-eats/tree/main/inventory-service/spanner",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cymbal-eats/main/inventory-service/spanner/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "cloudrun",
+      "spanner",
+      "go"
+    ],
+    "category": "solution",
+    "lastModified": "2022-09-10T10:15:04.000Z",
+    "owner": "Google Cloud Solutions Architecture Team",
+    "email": "sa-cloud-provision-templates@google.com"
   },
   {
     "id": 3,
     "name": "Managing infrastructure as code with Terraform",
     "description": "Managing infrastructure as code with Terraform, Cloud Build, and GitOps",
-    "sourceUrl":
-    "https://github.com/gitrey/cp-templates/tree/main/iac-terraform-cloudbuild",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/iac-terraform-cloudbuild/cloudprovision.json"
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/feature/adding-template-metadata/solution/iac-terraform-cloudbuild",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/feature/adding-template-metadata/solution/iac-terraform-cloudbuild/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "terraform",
+      "cloudbuild",
+      "compute"
+    ],
+    "category": "solution",
+    "lastModified": "2022-08-12T11:16:04.000Z",
+    "owner": "Google Cloud Solutions Architecture Team",
+    "email": "sa-cloud-provision-templates@google.com"
+  },
+  {
+    "id": 4,
+    "name": "PubSub",
+    "description": "Create PubSub instance",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/feature/adding-template-metadata/infra/pubsub",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/feature/adding-template-metadata/infra/pubsub/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "pubsub"
+    ],
+    "category": "infra",
+    "lastModified": "2022-09-25T11:22:04.000Z",
+    "owner": "Google Cloud Solutions Architecture Team",
+    "email": "sa-cloud-provision-templates@google.com"
+  },
+  {
+    "id": 5,
+    "name": "CloudSQL (MySQL)",
+    "description": "Create CloudSQL MySQL instance",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/feature/adding-template-metadata/infra/pubsub",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/feature/adding-template-metadata/infra/cloudsql-mysql/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "cloudsql",
+      "mysql"
+    ],
+    "category": "infra",
+    "lastModified": "2022-09-26T11:18:04.000Z",
+    "owner": "Google Cloud Solutions Architecture Team",
+    "email": "sa-cloud-provision-templates@google.com"
+  },
+  {
+    "id": 6,
+    "name": "CloudSQL (PostgreSQL)",
+    "description": "Create CloudSQL PostgreSQL instance",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/feature/adding-template-metadata/infra/cloudsql-postgresql",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/feature/adding-template-metadata/infra/cloudsql-postgresql/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "cloudsql",
+      "postgresql"
+    ],
+    "category": "infra",
+    "lastModified": "2022-09-27T14:15:04.000Z",
+    "owner": "Google Cloud Solutions Architecture Team",
+    "email": "sa-cloud-provision-templates@google.com"
+  },
+  {
+    "id": 7,
+    "name": "Google Cloud Storage",
+    "description": "Create Google Cloud Storage bucket",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/feature/adding-template-metadata/main/infra/gcs",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/feature/adding-template-metadata/infra/gcs/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "gcs",
+      "storage"
+    ],
+    "category": "infra",
+    "lastModified": "2022-09-29T15:12:04.000Z",
+    "owner": "Google Cloud Solutions Architecture Team",
+    "email": "sa-cloud-provision-templates@google.com"
+  },
+  {
+    "id": 8,
+    "name": "Onboard Java application - Cloud Run",
+    "description": "Onboard Java application - Cloud Run",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/feature/adding-template-metadata/java-app",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/feature/adding-template-metadata/application/java-app/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "cloudrun",
+      "java"
+    ],
+    "category": "application",
+    "lastModified": "2022-09-29T16:19:04.000Z",
+    "owner": "Google Cloud Solutions Architecture Team",
+    "email": "sa-cloud-provision-templates@google.com"
   }
 ]
