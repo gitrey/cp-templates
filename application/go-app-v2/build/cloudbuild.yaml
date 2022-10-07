@@ -1,0 +1,24 @@
+steps:
+  - name: gcr.io/cloud-builders/git
+    args:
+      - '-c'
+      - |
+        IFS='/' read -a array <<< "${_REF}"
+        echo 0 ${array[0]}
+        echo 1 ${array[1]}
+        echo 2 ${array[2]}
+        echo REPO=${_APP_REPO}
+
+
+        echo BRANCH_NAME=${array[2]}
+
+        if ((${array[1]} == "tags")); then
+          echo "TAG " ${BRANCH_NAME}
+        elif ((${array[2]} == "main")); then
+          echo "master"
+        else 
+          echo ${BRANCH_NAME}
+        fi
+        echo done
+    id: clone-app
+    entrypoint: bash
