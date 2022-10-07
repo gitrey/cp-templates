@@ -11,6 +11,16 @@
         ]
       },
       {
+        "id": "ubuntu",
+        "name": "gcr.io/cloud-builders/git",
+        "entrypoint": "bash",
+        "args": [
+          "-c",
+          "git clone https://github.com/gitrey/cp-templates.git",
+          "git clone https://github.com/cgrant/cp-utils.git utils"
+        ]
+      },
+      {
         "id": "createApp",
         "name": "ubuntu",
         "env": [
@@ -21,7 +31,7 @@
           "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}",
           "API_KEY=${_API_KEY}"
         ],
-        "script": "./cp-templates/cicd-pipeline/createApp.sh"
+        "script": "./cp-templates/cicd-pipeline/util/createApp.sh"
       },
       {
         "id": "createGitWebhook",
@@ -35,7 +45,7 @@
           "REGION=${_REGION}",
           "API_KEY=${_API_KEY}"
         ],
-        "script": "./cp-templates/cicd-pipeline/createWebhook.sh"
+        "script": "./cp-templates/cicd-pipeline/util/createWebhook.sh"
       }
     ]
   },
