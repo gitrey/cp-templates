@@ -29,6 +29,7 @@ echo INSTANCE_GIT_REPO_NAME=${INSTANCE_GIT_REPO_NAME}
 echo INSTANCE_GIT_REPO_TOKEN=${INSTANCE_GIT_REPO_TOKEN}
 echo GIT_TOKEN=$GIT_TOKEN
 
+apt-get update
 apt-get install curl git -y
 
 #git config --global user.email $(gcloud config get-value account)
