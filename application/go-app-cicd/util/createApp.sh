@@ -15,8 +15,8 @@ export GIT_USERNAME=${INSTANCE_GIT_REPO_OWNER}
 export GIT_TOKEN=${INSTANCE_GIT_REPO_TOKEN}
 export GIT_BASE_URL=https://${INSTANCE_GIT_REPO_OWNER}@github.com/${INSTANCE_GIT_REPO_OWNER}
 export BASE_DIR=${PWD}
-export GIT_CMD=${BASE_DIR}/cp-templates/cicd-pipeline/util/git/gh.sh
-export GIT_ASKPASS=${BASE_DIR}/cp-templates/cicd-pipeline/util/git/git-ask-pass.sh
+export GIT_CMD=${BASE_DIR}/cp-templates/go-app-cicd/util/git/gh.sh
+export GIT_ASKPASS=${BASE_DIR}/cp-templates/go-app-cicd/util/git/git-ask-pass.sh
 
 
 ## Verify Vars
@@ -50,8 +50,8 @@ printf 'Creating application: %s \n' $APP_NAME
 #git clone https://github.com/GoogleCloudPlatform/software-delivery-workshop.git plat
 #mv plat/delivery-platform/resources/repos/app-templates ./
 #rm -rf plat
-rm -rf app-templates/.git
-cd ./cp-templates/cicd-pipeline/app-templates/sample
+rm -rf ./cp-templates/.git
+cd ./cp-templates/go-app-cicd/
 
 # Swap Variables
 for template in $(find . -name '*.tmpl'); do envsubst < ${template} > ${template%.*}; done

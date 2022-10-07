@@ -12,9 +12,6 @@
 # API_KEY
 
 
-# subdir of template # TODO refactor
-APP_LANG=sample
-
 ## CONSTRUCTED VARS
 export GIT_TOKEN=${GIT_TOKEN}
 export GIT_USER=${GIT_USER}
@@ -23,7 +20,7 @@ export API_KEY_VALUE=${API_KEY}
 
 
 export WORK_DIR=${PWD}
-export GIT_CMD=${WORK_DIR}/cp-templates/cicd-pipeline/util/git/gh.sh
+export GIT_CMD=${WORK_DIR}/cp-templates/go-app-cicd/util/git/gh.sh
 export GIT_BASE_URL=https://${GIT_USER}@github.com/${GIT_USER}
 
 export APP_INSTANCE_REPO_LOCATION=https://github.com/${GIT_USERNAME}/${APP_NAME}
@@ -47,7 +44,7 @@ gcloud secrets add-iam-policy-binding ${SECRET_NAME} \
 ## Create CloudBuild Webhook Endpoint
 echo Create CloudBuild Webhook Endpoint
 TRIGGER_NAME=${APP_NAME}-webhook-trigger
-BUILD_YAML_PATH=$WORK_DIR/cp-templates/cicd-pipeline/app-templates/${APP_LANG}/build/cloudbuild.yaml
+BUILD_YAML_PATH=$WORK_DIR/cp-templates/go-app-cicd/build/cloudbuild.yaml
 
 ## Setup Trigger & Webhook
 gcloud alpha builds triggers create webhook \
