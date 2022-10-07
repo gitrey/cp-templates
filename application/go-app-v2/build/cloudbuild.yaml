@@ -9,9 +9,11 @@ steps:
         echo 1 ${array[1]}
         echo 2 ${array[2]}
         echo REPO=${_APP_REPO}
+        export REPO=${_APP_REPO}
 
 
         echo BRANCH_NAME=${array[2]}
+        export BRANCH_NAME=${array[2]}
 
         if ((${array[1]} == "tags")); then
           echo "TAG " ${BRANCH_NAME}
@@ -20,8 +22,8 @@ steps:
         else 
           echo ${BRANCH_NAME}
         fi
-        echo "git clone -b ${BRANCH_NAME} ${_APP_REPO}"
-        git clone -b ${BRANCH_NAME} ${_APP_REPO}
+        echo "git clone -b ${BRANCH_NAME} ${REPO}"
+        git clone -b ${BRANCH_NAME} ${REPO}
         echo done
     id: clone-app
     entrypoint: bash
