@@ -1,4 +1,6 @@
-# Copyright 2022 Google LLC
+#!/usr/bin/env bash
+
+# Copyright 2021 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,24 +14,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-steps:
-- name: gcr.io/cloud-builders/git
-  args:
-  - '-c'
-  - |
-    IFS='/' read -a array <<< "${_REF}"
-    echo 0 ${array[0]}
-    echo 1 ${array[1]}
-    echo 2 ${array[2]}
-    echo REPO=${_APP_REPO}
-    echo BRANCH_NAME=${array[2]}
-    if ((${array[1]} == "tags")); then
-      echo "TAG " ${BRANCH_NAME}
-    elif ((${array[2]} == "master")); then
-      echo "master"
-    else 
-      echo ${BRANCH_NAME}
-    fi
-    echo done
-  id: clone-app
-  entrypoint: bash
+
+exec echo "${GIT_TOKEN}"
