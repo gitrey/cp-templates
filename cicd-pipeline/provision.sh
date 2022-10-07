@@ -1,6 +1,0 @@
-
-echo ${BAR}
-
-echo ${_INSTANCE_GIT_REPO_OWNER}
-echo ${_INSTANCE_GIT_REPO_NAME}
-echo ${_INSTANCE_GIT_REPO_TOKEN}

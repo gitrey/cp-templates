@@ -1,0 +1,31 @@
+{
+    "substitutions": {
+      "_APP_NAME": "myApp",
+
+      "_INSTANCE_GIT_REPO_TOKEN": "",
+      "_INSTANCE_GIT_REPO_NAME": "",
+      "_INSTANCE_GIT_REPO_OWNER": "",
+
+      "_API_KEY":""
+    },
+    "steps": [
+      
+          {
+            "id":"createGitWebhook",
+            "name": "gcr.io/cloud-builders/gcloud",
+    
+            "env": [
+                "PROJECT_ID=$PROJECT_ID",
+                "APP_NAME=${_APP_NAME}",
+                "GIT_USER=${_INSTANCE_GIT_REPO_OWNER}",
+                "GIT_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
+
+                "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}",
+
+                "API_KEY=${_API_KEY}"
+
+              ],
+              "script": "./createWebhook.sh"
+          }
+    ]
+ }
