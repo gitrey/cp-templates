@@ -15,7 +15,7 @@ steps:
         if ((${array[1]} == "tags")); then
           echo "TAG " ${BRANCH_NAME}
         elif ((${array[2]} == "main")); then
-          echo "master"
+          echo "main"
         else 
           echo ${BRANCH_NAME}
         fi
