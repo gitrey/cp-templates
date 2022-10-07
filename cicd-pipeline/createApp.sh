@@ -34,7 +34,7 @@ git config --global user.email $(gcloud config get-value account)
 git config --global user.name ${INSTANCE_GIT_REPO_OWNER}
 
 
-git clone https://github.com/cgrant/build-templates.git util
+git clone https://github.com/gitrey/cp-templates.git util
 
 
 
