@@ -9,6 +9,7 @@ steps:
         echo 1 ${array[1]}
         echo 2 ${array[2]}
         echo REPO=${_APP_REPO}
+        echo _SHA=${_SHA}
         export REPO=${_APP_REPO}
 
 
