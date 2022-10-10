@@ -37,7 +37,7 @@
           "INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
           "INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER}",
           "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}",
-          "TEMPLATE_FOLDER=cp-templates/application/go-app-v2",
+          "TEMPLATE_FOLDER=cp-templates/application/go-app-cicd",
           "API_KEY=${_API_KEY}"
         ],
         "script": "./utils/createApp.sh"
@@ -52,7 +52,7 @@
           "GIT_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
           "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}",
           "REGION=${_REGION}",
-          "TEMPLATE_FOLDER=cp-templates/application/go-app-v2",
+          "TEMPLATE_FOLDER=cp-templates/application/go-app-cicd",
           "API_KEY=${_API_KEY}"
         ],
         "script": "./utils/createWebhook.sh"
