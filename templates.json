@@ -105,7 +105,8 @@
     "version": "1.0.0",
     "tags": [
       "cloudrun",
-      "go"
+      "go",
+      "cicd"
     ],
     "category": "application",
     "lastModified": "2022-10-06T12:17:04.000Z",
