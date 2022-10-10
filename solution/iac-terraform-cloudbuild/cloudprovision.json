@@ -58,6 +58,14 @@
       "type": "string",
       "required": true,
       "display": false
+    },
+    {
+      "param": "_API_KEY",
+      "label": "GCP API Key",
+      "description": "GCP API Key",
+      "type": "string",
+      "required": true,
+      "display": false
     }
   ]
 }
