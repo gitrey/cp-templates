@@ -98,8 +98,8 @@
   },
   {
     "id": 8,
-    "name": "Onboard Go application - Cloud Run v2",
-    "description": "Onboard Go application - Cloud Run v2",
+    "name": "Onboard Go application - Cloud Run",
+    "description": "Onboard Go application - Cloud Run",
     "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/application/go-app-v2",
     "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/application/go-app-v2/cloudprovision.json",
     "version": "1.0.0",
