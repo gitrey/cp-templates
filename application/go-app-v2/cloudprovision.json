@@ -1,0 +1,108 @@
+{
+  "cloudbuild": {
+    "steps": [
+      {
+        "id": "Inspect Values",
+        "name": "ubuntu",
+        "entrypoint": "bash",
+        "args": [
+          "-c",
+          "echo _APP_NAME=${_APP_NAME} _REGION=${_REGION} _INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER} _INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME} _INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN} _API_KEY=${_API_KEY}"
+        ]
+      },
+      {
+        "id": "clone cp-templates",
+        "name": "gcr.io/cloud-builders/git",
+        "entrypoint": "bash",
+        "args": [
+          "-c",
+          "git clone https://github.com/gitrey/cp-templates.git"
+        ]
+      },
+      {
+        "id": "clone cp-utils",
+        "name": "gcr.io/cloud-builders/git",
+        "entrypoint": "bash",
+        "args": [
+          "-c",
+          "git clone -b main https://github.com/cgrant/cp-utils.git utils"
+        ]
+      },
+      {
+        "id": "createApp",
+        "name": "ubuntu",
+        "env": [
+          "APP_NAME=${_APP_NAME}",
+          "REGION=${_REGION}",
+          "INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
+          "INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER}",
+          "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}",
+          "TEMPLATE_FOLDER=cp-templates/application/go-app-v2",
+          "API_KEY=${_API_KEY}"
+        ],
+        "script": "./utils/createApp.sh"
+      },
+      {
+        "id": "createGitWebhook",
+        "name": "gcr.io/cloud-builders/gcloud",
+        "env": [
+          "PROJECT_ID=$PROJECT_ID",
+          "APP_NAME=${_APP_NAME}",
+          "GIT_USER=${_INSTANCE_GIT_REPO_OWNER}",
+          "GIT_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
+          "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}",
+          "REGION=${_REGION}",
+          "TEMPLATE_FOLDER=cp-templates/application/go-app-v2",
+          "API_KEY=${_API_KEY}"
+        ],
+        "script": "./utils/createWebhook.sh"
+      }
+    ]
+  },
+  "params": [
+    {
+      "param": "_APP_NAME",
+      "label": "Application Name",
+      "description": "Application that will be deployed.",
+      "type": "string",
+      "required": true
+    },
+    {
+      "param": "_REGION",
+      "label": "Application Region",
+      "description": "Where do you want to deploy the application?",
+      "type": "string",
+      "required": true
+    },
+    {
+      "param": "_INSTANCE_GIT_REPO_OWNER",
+      "label": "Instance GitHub Repository Owner",
+      "description": "Instance GitHub Repository Owner",
+      "type": "dropdown",
+      "required": true
+    },
+    {
+      "param": "_INSTANCE_GIT_REPO_NAME",
+      "label": "Instance GitHub Repository Name",
+      "description": "Instance GitHub Repository Name",
+      "type": "string",
+      "required": true
+    },
+    {
+      "param": "_INSTANCE_GIT_REPO_TOKEN",
+      "label": "Instance GitHub Repository Token",
+      "description": "Instance GitHub Repository Token",
+      "type": "string",
+      "required": true,
+      "display": false
+    },
+    {
+      "param": "_API_KEY",
+      "label": "GCP API Key",
+      "description": "GCP API Key",
+      "type": "string",
+      "required": true,
+      "display": false
+    }
+  ]
+}

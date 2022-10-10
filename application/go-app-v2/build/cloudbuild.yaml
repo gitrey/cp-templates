@@ -1,0 +1,43 @@
+steps:
+  - name: gcr.io/cloud-builders/git
+    args:
+      - '-c'
+      - |
+        IFS='/' read -a array <<< "${_REF}"
+        echo ${_REF}
+        echo 0 ${array[0]}
+        echo 1 ${array[1]}
+        echo 2 ${array[2]}
+        echo REPO=${_APP_REPO}
+        echo _SHA=${_SHA}
+        export REPO=${_APP_REPO}
+
+
+        echo BRANCH_NAME=${array[2]}
+        export BRANCH_NAME=${array[2]}
+
+        if ((${array[1]} == "tags")); then
+          echo "TAG " ${BRANCH_NAME}
+        elif ((${array[2]} == "main")); then
+          echo "main"
+        else 
+          echo ${BRANCH_NAME}
+        fi
+        echo "git clone -b ${array[2]} ${_APP_REPO}"
+        git clone -b ${array[2]} ${_APP_REPO}
+        echo done
+    id: clone-app
+    entrypoint: bash
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t',
+         'us-central1-docker.pkg.dev/$PROJECT_ID/cp-repo/$_APP_NAME:$_SHA', './$_APP_NAME']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/cp-repo/$_APP_NAME:$_SHA']
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['run', 'deploy', '$_APP_NAME',
+           '--image=us-central1-docker.pkg.dev/$PROJECT_ID/cp-repo/$_APP_NAME:$_SHA',
+           '--allow-unauthenticated',
+           '--region', '$_REGION', '--platform', 'managed']
