@@ -111,7 +111,19 @@
     "category": "application",
     "lastModified": "2022-10-06T12:17:04.000Z",
     "owner": "Google Cloud Solutions Architecture Team",
-    "email": "sa-cloud-provision-templates@google.com"
+    "email": "sa-cloud-provision-templates@google.com",
+    "metadata": [
+      {
+        "name": "Connecting to Fully Managed Databases from Cloud Run",
+        "value": "https://codelabs.developers.google.com/connecting-to-serverless-databases-from-cloud-run?hl=en#0",
+        "type": "url"
+      },
+      {
+        "name": "Secure Serverless Application with Identity Aware Proxy (IAP)",
+        "value": "https://codelabs.developers.google.com/secure-serverless-application-with-identity-aware-proxy?hl=en#0",
+        "type": "url"
+      }
+    ]
   },
   {
     "id": 9,
@@ -127,7 +139,7 @@
     "category": "application",
     "lastModified": "2022-09-20T10:10:04.000Z",
     "owner": "Google Cloud Solutions Architecture Team",
-    "email": "sa-cloud-provision-templates@google.com"
+    "email": "sa-cloud-provision-templates@google.com",
   },
   {
     "id": 10,
