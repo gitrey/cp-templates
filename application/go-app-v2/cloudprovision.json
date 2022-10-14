@@ -1,5 +1,5 @@
 {
-  "cloudbuild": {
+  "create": {
     "steps": [
       {
         "id": "Inspect Values",
@@ -7,7 +7,7 @@
         "entrypoint": "bash",
         "args": [
           "-c",
-          "echo _APP_NAME=${_APP_NAME} _REGION=${_REGION} _INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER} _INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME} _INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN} _API_KEY=${_API_KEY}"
+          "echo _APP_ID=${_APP_ID} _APP_NAME=${_APP_NAME} _REGION=${_REGION} _INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER} _INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME} _INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN} _API_KEY=${_API_KEY}"
         ]
       },
       {
@@ -16,7 +16,7 @@
         "entrypoint": "bash",
         "args": [
           "-c",
-          "git clone https://github.com/gitrey/cp-templates.git"
+          "git clone -b feature/new-app-metadata https://github.com/gitrey/cp-templates.git"
         ]
       },
       {
@@ -25,13 +25,14 @@
         "entrypoint": "bash",
         "args": [
           "-c",
-          "git clone -b main https://github.com/cgrant/cp-utils.git utils"
+          "git clone -b feature/new-app-metadata https://github.com/cgrant/cp-utils.git utils"
         ]
       },
       {
         "id": "createApp",
         "name": "ubuntu",
         "env": [
+          "APP_ID=${_APP_ID}",
           "APP_NAME=${_APP_NAME}",
           "REGION=${_REGION}",
           "INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
@@ -47,6 +48,7 @@
         "name": "gcr.io/cloud-builders/gcloud",
         "env": [
           "PROJECT_ID=$PROJECT_ID",
+          "APP_ID=${_APP_ID}",
           "APP_NAME=${_APP_NAME}",
           "GIT_USER=${_INSTANCE_GIT_REPO_OWNER}",
           "GIT_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
@@ -59,7 +61,53 @@
       }
     ]
   },
-  "params": [
+  "destroy": {
+    "steps": [
+      {
+        "id": "Inspect Values",
+        "name": "ubuntu",
+        "entrypoint": "bash",
+        "args": [
+          "-c",
+          "echo _APP_ID=${_APP_ID} _APP_NAME=${_APP_NAME} _REGION=${_REGION} _INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER} _INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME} _INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN} _API_KEY=${_API_KEY}"
+        ]
+      },
+      {
+        "id": "clone templates",
+        "name": "gcr.io/cloud-builders/git",
+        "entrypoint": "bash",
+        "args": [
+          "-c",
+          "git clone -b feature/new-app-metadata https://github.com/gitrey/cp-templates.git"
+        ]
+      },
+      {
+        "id": "clone utils",
+        "name": "gcr.io/cloud-builders/git",
+        "entrypoint": "bash",
+        "args": [
+          "-c",
+          "git clone -b feature/new-app-metadata https://github.com/cgrant/cp-utils.git utils"
+        ]
+      },
+      {
+        "id": "cleanup",
+        "name": "ubuntu",
+        "env": [
+          "APP_ID=${_APP_ID}",
+          "APP_NAME=${_APP_NAME}",
+          "REGION=${_REGION}",
+          "INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
+          "INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER}",
+          "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}",
+          "TEMPLATE_FOLDER=cp-templates/application/go-app-v2",
+          "API_KEY=${_API_KEY}"
+        ],
+        "script": "./utils/cleanup.sh"
+      }
+    ]
+  },
+  "inputs": [
     {
       "param": "_APP_NAME",
       "label": "Application Name",
@@ -103,6 +151,14 @@
       "type": "string",
       "required": true,
       "display": false
+    }
+  ],
+  "outputs": [
+    {
+      "serviceUrl": "",
+      "triggerUrl": "",
+      "repoUrl": "",
+      "buildUrl": ""
     }
   ]
 }
