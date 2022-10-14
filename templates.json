@@ -115,12 +115,12 @@
     "metadata": [
       {
         "name": "Connecting to Fully Managed Databases from Cloud Run",
-        "value": "https://codelabs.developers.google.com/connecting-to-serverless-databases-from-cloud-run?hl=en#0",
+        "value": "https://codelabs.developers.google.com/connecting-to-serverless-databases-from-cloud-run",
         "type": "url"
       },
       {
         "name": "Secure Serverless Application with Identity Aware Proxy (IAP)",
-        "value": "https://codelabs.developers.google.com/secure-serverless-application-with-identity-aware-proxy?hl=en#0",
+        "value": "https://codelabs.developers.google.com/secure-serverless-application-with-identity-aware-proxy",
         "type": "url"
       }
     ]
