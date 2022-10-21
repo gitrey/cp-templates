@@ -147,10 +147,32 @@
   ],
   "outputs": [
     {
-      "serviceUrl": "",
-      "triggerUrl": "",
-      "repoUrl": "",
-      "buildUrl": ""
+      "param": "_SERVICE_URL",
+      "label": "Service Url",
+      "description": "Service Url",
+      "type": "string",
+      "required": true
+    },
+    {
+      "param": "_TRIGGER_URL",
+      "label": "Cloud Build Trigger Url",
+      "description": "Cloud Build Trigger Url",
+      "type": "string",
+      "required": true
+    },
+    {
+      "param": "_REPO_URL",
+      "label": "Repo Url",
+      "description": "Repo Url",
+      "type": "string",
+      "required": true
+    },
+    {
+      "param": "_BUILD_URL",
+      "label": "Cloud Build Url",
+      "description": "Cloud Build Url",
+      "type": "string",
+      "required": true
     }
   ]
 }
