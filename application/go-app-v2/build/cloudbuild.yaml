@@ -31,7 +31,7 @@ steps:
 
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t',
-         'us-central1-docker.pkg.dev/$PROJECT_ID/cp-repo/$_APP_ID:$_SHA', './$_APP_NAME']
+         'us-central1-docker.pkg.dev/$PROJECT_ID/cp-repo/$_APP_ID:$_SHA', './$_APP_ID']
 
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/cp-repo/$_APP_ID:$_SHA']
