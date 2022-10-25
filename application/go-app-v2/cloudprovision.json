@@ -51,7 +51,6 @@
           "APP_NAME=${_APP_NAME}",
           "GIT_USER=${_INSTANCE_GIT_REPO_OWNER}",
           "GIT_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
-          "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}",
           "REGION=${_REGION}",
           "TEMPLATE_FOLDER=cp-templates/application/go-app-v2",
           "API_KEY=${_API_KEY}"
@@ -98,7 +97,6 @@
           "REGION=${_REGION}",
           "INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
           "INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER}",
-          "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}",
           "TEMPLATE_FOLDER=cp-templates/application/go-app-v2",
           "API_KEY=${_API_KEY}"
         ],
