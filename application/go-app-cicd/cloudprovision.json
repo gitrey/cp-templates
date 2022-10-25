@@ -7,7 +7,7 @@
         "entrypoint": "bash",
         "args": [
           "-c",
-          "echo _APP_NAME=${_APP_NAME} _REGION=${_REGION} _INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER} _INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME} _INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN} _API_KEY=${_API_KEY}"
+          "echo _APP_NAME=${_APP_NAME} _REGION=${_REGION} _INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER} _INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN} _API_KEY=${_API_KEY}"
         ]
       },
       {
@@ -36,7 +36,6 @@
           "REGION=${_REGION}",
           "INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
           "INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER}",
-          "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}",
           "TEMPLATE_FOLDER=cp-templates/application/go-app-cicd",
           "API_KEY=${_API_KEY}"
         ],
@@ -50,7 +49,6 @@
           "APP_NAME=${_APP_NAME}",
           "GIT_USER=${_INSTANCE_GIT_REPO_OWNER}",
           "GIT_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}",
-          "INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME}",
           "REGION=${_REGION}",
           "TEMPLATE_FOLDER=cp-templates/application/go-app-cicd",
           "API_KEY=${_API_KEY}"
@@ -79,13 +77,6 @@
       "label": "Instance GitHub Repository Owner",
       "description": "Instance GitHub Repository Owner",
       "type": "dropdown",
-      "required": true
-    },
-    {
-      "param": "_INSTANCE_GIT_REPO_NAME",
-      "label": "Instance GitHub Repository Name",
-      "description": "Instance GitHub Repository Name",
-      "type": "string",
       "required": true
     },
     {

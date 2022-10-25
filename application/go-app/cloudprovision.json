@@ -16,7 +16,7 @@
           "--branch-pattern=main",
           "--included-files=application/go-app/**",
           "--build-config=./application/go-app/cloudbuild.yaml",
-          "--substitutions=_APP_NAME=${_APP_NAME},_REPO_NAME=cp-repo,_REGION=${_REGION},_INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER},_INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME},_INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN},_API_KEY=${_API_KEY}"
+          "--substitutions=_APP_NAME=${_APP_NAME},_REPO_NAME=cp-repo,_REGION=${_REGION},_INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER},_INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN},_API_KEY=${_API_KEY}"
         ]
       }
     ]
@@ -41,13 +41,6 @@
       "label": "Instance GitHub Repository Owner",
       "description": "Instance GitHub Repository Owner",
       "type": "dropdown",
-      "required": true
-    },
-    {
-      "param": "_INSTANCE_GIT_REPO_NAME",
-      "label": "Instance GitHub Repository Name",
-      "description": "Instance GitHub Repository Name",
-      "type": "string",
       "required": true
     },
     {

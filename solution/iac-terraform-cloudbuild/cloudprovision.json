@@ -7,7 +7,7 @@
         "entrypoint": "bash",
         "args": [
           "-c",
-          "echo _APP_NAME=${_APP_NAME} _REGION=${_REGION} _INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER} _INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME} _INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN} _API_KEY=${_API_KEY}"
+          "echo _APP_NAME=${_APP_NAME} _REGION=${_REGION} _INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER} _INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN} _API_KEY=${_API_KEY}"
         ]
       },
       {
@@ -19,7 +19,7 @@
           "--branch-pattern=main",
           "--included-files=solution/iac-terraform-cloudbuild/**",
           "--build-config=./solution/iac-terraform-cloudbuild/cloudbuild.yaml",
-          "--substitutions=_APP_NAME=${_APP_NAME},_BRANCH_NAME=${_BRANCH_NAME},_REGION=${_REGION},_INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER},_INSTANCE_GIT_REPO_NAME=${_INSTANCE_GIT_REPO_NAME},_INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}"
+          "--substitutions=_APP_NAME=${_APP_NAME},_BRANCH_NAME=${_BRANCH_NAME},_REGION=${_REGION},_INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER},_INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}"
         ]
       }
     ]
@@ -51,13 +51,6 @@
       "label": "Instance GitHub Repository Owner",
       "description": "Instance GitHub Repository Owner",
       "type": "dropdown",
-      "required": true
-    },
-    {
-      "param": "_INSTANCE_GIT_REPO_NAME",
-      "label": "Instance GitHub Repository Name",
-      "description": "Instance GitHub Repository Name",
-      "type": "string",
       "required": true
     },
     {
