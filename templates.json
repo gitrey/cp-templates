@@ -168,7 +168,7 @@
     "name": "Quota Monitoring and Alerting",
     "description": "Quota Monitoring and Alerting",
     "sourceUrl": "https://github.com/gitrey/quota-monitoring-solution/tree/feature/enable-cloud-provision",
-    "cloudProvisionConfigUrl": "https://github.com/gitrey/quota-monitoring-solution/blob/feature/enable-cloud-provision/cloudprovision.json",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/quota-monitoring-solution/feature/enable-cloud-provision/cloudprovision.json",
     "version": "1.0.0",
     "tags": [
       "quota",
