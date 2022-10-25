@@ -101,7 +101,7 @@
     "name": "Onboard Go application - Cloud Run",
     "description": "Onboard Go application - Cloud Run",
     "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/application/go-app-v2",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/application/go-app-v2/cloudprovision.json",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/feature/new-app-metadata/application/go-app-v2/cloudprovision.json",
     "version": "1.0.0",
     "tags": [
       "cloudrun",
@@ -111,7 +111,19 @@
     "category": "application",
     "lastModified": "2022-10-06T12:17:04.000Z",
     "owner": "Google Cloud Solutions Architecture Team",
-    "email": "sa-cloud-provision-templates@google.com"
+    "email": "sa-cloud-provision-templates@google.com",
+    "metadata": [
+      {
+        "name": "Connecting to Fully Managed Databases from Cloud Run",
+        "value": "https://codelabs.developers.google.com/connecting-to-serverless-databases-from-cloud-run",
+        "type": "url"
+      },
+      {
+        "name": "Secure Serverless Application with Identity Aware Proxy (IAP)",
+        "value": "https://codelabs.developers.google.com/secure-serverless-application-with-identity-aware-proxy",
+        "type": "url"
+      }
+    ]
   },
   {
     "id": 9,
@@ -126,6 +138,28 @@
     ],
     "category": "application",
     "lastModified": "2022-09-20T10:10:04.000Z",
+    "owner": "Google Cloud Solutions Architecture Team",
+    "email": "sa-cloud-provision-templates@google.com"
+  },
+  {
+    "id": 10,
+    "name": "Deploy Cymbal Eats application",
+    "description": "Deploy Cymbal Eats application",
+    "sourceUrl": "https://github.com/gitrey/cymbal-eats/tree/feature/new-app-metadata",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cymbal-eats/feature/new-app-metadata/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "cloudrun",
+      "spanner",
+      "go",
+      "java",
+      "nodejs",
+      "cloudsql",
+      "firestore",
+      "workspace"
+    ],
+    "category": "solution",
+    "lastModified": "2022-09-10T10:15:04.000Z",
     "owner": "Google Cloud Solutions Architecture Team",
     "email": "sa-cloud-provision-templates@google.com"
   }
