@@ -16,7 +16,7 @@
         "entrypoint": "bash",
         "args": [
           "-c",
-          "git clone -b feature/new-app-metadata https://github.com/gitrey/cp-templates.git"
+          "git clone -b main https://github.com/gitrey/cp-templates.git"
         ]
       },
       {
@@ -25,7 +25,7 @@
         "entrypoint": "bash",
         "args": [
           "-c",
-          "git clone -b feature/new-app-metadata https://github.com/cgrant/cp-utils.git utils"
+          "git clone -b main https://github.com/cgrant/cp-utils.git utils"
         ]
       },
       {
@@ -76,7 +76,7 @@
         "entrypoint": "bash",
         "args": [
           "-c",
-          "git clone -b feature/new-app-metadata https://github.com/gitrey/cp-templates.git"
+          "git clone -b main https://github.com/gitrey/cp-templates.git"
         ]
       },
       {
@@ -85,7 +85,7 @@
         "entrypoint": "bash",
         "args": [
           "-c",
-          "git clone -b feature/new-app-metadata https://github.com/cgrant/cp-utils.git utils"
+          "git clone -b main https://github.com/cgrant/cp-utils.git utils"
         ]
       },
       {
