@@ -162,5 +162,35 @@
     "lastModified": "2022-09-10T10:15:04.000Z",
     "owner": "Google Cloud Solutions Architecture Team",
     "email": "sa-cloud-provision-templates@google.com"
+  },
+  {
+    "id": 11,
+    "name": "Quota Monitoring and Alerting",
+    "description": "Quota Monitoring and Alerting",
+    "sourceUrl": "https://github.com/gitrey/quota-monitoring-solution/tree/feature/enable-cloud-provision",
+    "cloudProvisionConfigUrl": "https://github.com/gitrey/quota-monitoring-solution/blob/feature/enable-cloud-provision/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "quota",
+      "monitoring",
+      "alerting",
+      "terraform"
+    ],
+    "category": "solution",
+    "lastModified": "2022-10-25T16:17:04.000Z",
+    "owner": "Google Cloud Solutions Architecture Team",
+    "email": "sa-cloud-provision-templates@google.com",
+    "metadata": [
+      {
+        "name": "Working with quotas",
+        "value": "https://cloud.google.com/docs/quota",
+        "type": "url"
+      },
+      {
+        "name": "Managing Capacity, Quota, and Stockouts in the Cloud: Concepts and Tips",
+        "value": "https://www.googlecloudcommunity.com/gc/Community-Blogs/Managing-Capacity-Quota-and-Stockouts-in-the-Cloud-Concepts-and/ba-p/464770",
+        "type": "url"
+      }
+    ]
   }
 ]
