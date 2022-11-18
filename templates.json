@@ -97,11 +97,11 @@
     "email": "sa-cloud-provision-templates@google.com"
   },
   {
-    "id": 8,
-    "name": "Onboard Go application - Cloud Run",
-    "description": "Onboard Go application - Cloud Run",
-    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/application/go-app-v2",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/application/go-app-v2/cloudprovision.json",
+    "id": 9,
+    "name": "Golang w/ CICD",
+    "description": "Golang application with full CICD integration",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/application/go-app-cicd",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/application/go-app-cicd/cloudprovision.json",
     "version": "1.0.0",
     "tags": [
       "cloudrun",
@@ -109,7 +109,7 @@
       "cicd"
     ],
     "category": "application",
-    "lastModified": "2022-10-06T12:17:04.000Z",
+    "lastModified": "2022-11-16T11:10:04.000Z",
     "owner": "Google Cloud Solutions Architecture Team",
     "email": "sa-cloud-provision-templates@google.com",
     "metadata": [
@@ -124,22 +124,6 @@
         "type": "url"
       }
     ]
-  },
-  {
-    "id": 9,
-    "name": "Golang w/ CICD",
-    "description": "Golang application with full CICD integration",
-    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/application/go-app-cicd",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/application/go-app-cicd/cloudprovision.json",
-    "version": "1.0.0",
-    "tags": [
-      "cloudrun",
-      "go"
-    ],
-    "category": "application",
-    "lastModified": "2022-09-20T10:10:04.000Z",
-    "owner": "Google Cloud Solutions Architecture Team",
-    "email": "sa-cloud-provision-templates@google.com"
   },
   {
     "id": 10,
