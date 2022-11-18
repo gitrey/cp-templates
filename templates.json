@@ -145,8 +145,8 @@
     "id": 10,
     "name": "Deploy Cymbal Eats application",
     "description": "Deploy Cymbal Eats application",
-    "sourceUrl": "https://github.com/gitrey/cymbal-eats/tree/feature/new-app-metadata",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cymbal-eats/feature/new-app-metadata/cloudprovision.json",
+    "sourceUrl": "https://github.com/gitrey/cymbal-eats/tree/main",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cymbal-eats/main/cloudprovision.json",
     "version": "1.0.0",
     "tags": [
       "cloudrun",
