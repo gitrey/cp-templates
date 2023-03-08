@@ -176,5 +176,63 @@
         "type": "url"
       }
     ]
+  },
+  {
+    "id": 12,
+    "name": "Java w/ CICD",
+    "description": "Java application with full CICD integration",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/application/go-app-cicd",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/application/go-app-cicd/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "cloudrun",
+      "java",
+      "cicd"
+    ],
+    "category": "application",
+    "lastModified": "2022-11-16T11:10:04.000Z",
+    "owner": "Google Cloud Solutions Architecture Team",
+    "email": "sa-cloud-provision-templates@google.com",
+    "metadata": [
+      {
+        "name": "Connecting to Fully Managed Databases from Cloud Run",
+        "value": "https://codelabs.developers.google.com/connecting-to-serverless-databases-from-cloud-run",
+        "type": "url"
+      },
+      {
+        "name": "Secure Serverless Application with Identity Aware Proxy (IAP)",
+        "value": "https://codelabs.developers.google.com/secure-serverless-application-with-identity-aware-proxy",
+        "type": "url"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Node.js w/ CICD",
+    "description": "Node.js application with full CICD integration",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/application/go-app-cicd",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/application/go-app-cicd/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "cloudrun",
+      "node.js",
+      "cicd"
+    ],
+    "category": "application",
+    "lastModified": "2022-11-16T11:10:04.000Z",
+    "owner": "Google Cloud Solutions Architecture Team",
+    "email": "sa-cloud-provision-templates@google.com",
+    "metadata": [
+      {
+        "name": "Connecting to Fully Managed Databases from Cloud Run",
+        "value": "https://codelabs.developers.google.com/connecting-to-serverless-databases-from-cloud-run",
+        "type": "url"
+      },
+      {
+        "name": "Secure Serverless Application with Identity Aware Proxy (IAP)",
+        "value": "https://codelabs.developers.google.com/secure-serverless-application-with-identity-aware-proxy",
+        "type": "url"
+      }
+    ]
   }
 ]
