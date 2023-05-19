@@ -99,8 +99,7 @@
       },
       {
         "id": "Delete git repo",
-        "name": "ubuntu",
-        "entrypoint": "curl",
+        "name": "curlimages/curl",
         "args": [
           "-L",
           "-X",
