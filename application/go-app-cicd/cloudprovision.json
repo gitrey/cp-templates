@@ -75,7 +75,12 @@
         "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
         "entrypoint": "gcloud",
         "args": [
-          "gcloud run services delete ${_APP_ID} --region=${_REGION}"
+          "run",
+          "services",
+          "delete",
+          "${_APP_ID}",
+          "--region",
+          "${_REGION}"
         ]
       },
       {
@@ -83,15 +88,11 @@
         "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
         "entrypoint": "gcloud",
         "args": [
-          "gcloud alpha builds triggers delete ${_APP_ID}-webhook-trigger"
-        ]
-      },
-      {
-        "id": "Delete git repo",
-        "name": "ubuntu",
-        "entrypoint": "git",
-        "args": [
-          "gcloud run services list"
+          "alpha",
+          "builds",
+          "triggers",
+          "delete",
+          "${_APP_ID}-webhook-trigger"
         ]
       }
     ]
