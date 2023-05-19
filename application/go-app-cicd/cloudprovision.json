@@ -91,7 +91,7 @@
         "name": "ubuntu",
         "entrypoint": "git",
         "args": [
-          "run services list"
+          "gcloud run services list"
         ]
       }
     ]
