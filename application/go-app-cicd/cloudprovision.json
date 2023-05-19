@@ -71,22 +71,6 @@
         ]
       },
       {
-        "id": "Delete git repo",
-        "name": "curlimages/curl",
-        "args": [
-          "-L",
-          "-X",
-          "DELETE",
-          "-H",
-          "Accept: application/vnd.github+json",
-          "-H",
-          "Authorization: Bearer ${_INSTANCE_GIT_REPO_TOKEN}",
-          "-H",
-          "X-GitHub-Api-Version: 2022-11-28",
-          "https://api.github.com/repos/${_INSTANCE_GIT_REPO_OWNER}/${_APP_ID}"
-        ]
-      },
-      {
         "id": "Delete cloud run service",
         "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
         "entrypoint": "gcloud",
@@ -111,6 +95,22 @@
           "delete",
           "${_APP_ID}-webhook-trigger",
           "--quiet"
+        ]
+      },
+      {
+        "id": "Delete git repo",
+        "name": "curlimages/curl",
+        "args": [
+          "-L",
+          "-X",
+          "DELETE",
+          "-H",
+          "Accept: application/vnd.github+json",
+          "-H",
+          "Authorization: Bearer ${_INSTANCE_GIT_REPO_TOKEN}",
+          "-H",
+          "X-GitHub-Api-Version: 2022-11-28",
+          "https://api.github.com/repos/${_INSTANCE_GIT_REPO_OWNER}/${_APP_ID}"
         ]
       }
     ]
