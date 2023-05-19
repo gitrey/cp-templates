@@ -75,7 +75,7 @@
         "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
         "entrypoint": "gcloud",
         "args": [
-          "run services delete ${_APP_ID} --region=${_REGION}"
+          "gcloud run services delete ${_APP_ID} --region=${_REGION}"
         ]
       },
       {
@@ -83,7 +83,7 @@
         "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
         "entrypoint": "gcloud",
         "args": [
-          "alpha builds triggers delete ${_APP_ID}-webhook-trigger"
+          "gcloud alpha builds triggers delete ${_APP_ID}-webhook-trigger"
         ]
       },
       {
