@@ -234,5 +234,27 @@
         "type": "url"
       }
     ]
+  },
+  {
+    "id": 14,
+    "name": "Cloud Workstations",
+    "description": "Cloud Workstations Cluster and Configuration",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/cloud-worksations",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/infra/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "workstations"
+    ],
+    "category": "infra",
+    "lastModified": "2023-05-22T14:10:04.000Z",
+    "owner": "Google Cloud Solutions Architecture Team",
+    "email": "sa-cloud-provision-templates@google.com",
+    "metadata": [
+      {
+        "name": "Cloud Workstations architecture",
+        "value": "https://cloud.google.com/workstations/docs/architecture",
+        "type": "url"
+      }
+    ]
   }
 ]
