@@ -240,7 +240,7 @@
     "name": "Cloud Workstations",
     "description": "Cloud Workstations Cluster and Configuration",
     "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/cloud-worksations",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/infra/cloudprovision.json",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/infra/cloud-worksations/cloudprovision.json",
     "version": "1.0.0",
     "tags": [
       "workstations"
