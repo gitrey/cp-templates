@@ -16,7 +16,7 @@
         "entrypoint": "bash",
         "args": [
           "-c",
-          "gcloud beta workstations configs create ${_APP_ID}-config --region=${_REGION} --machine-type=e2-standard-8 --container-predefined-image=codeoss"
+          "gcloud beta workstations configs create ${_APP_ID}-config --cluster=${_APP_ID}-cluster --region=${_REGION} --machine-type=e2-standard-8 --container-predefined-image=codeoss"
         ]
       }
     ]
