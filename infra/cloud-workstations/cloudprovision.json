@@ -1,0 +1,127 @@
+{
+  "create": {
+    "steps": [
+      {
+        "id": "Inspect Values",
+        "name": "ubuntu",
+        "entrypoint": "bash",
+        "args": [
+          "-c",
+          "echo _APP_ID=${_APP_ID} _APP_NAME=${_APP_NAME} _REGION=${_REGION} _INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER} _INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN} _API_KEY=${_API_KEY}"
+        ]
+      },
+      {
+        "id": "Create Workstations Cluster ",
+        "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
+        "entrypoint": "gcloud",
+        "args": [
+          "beta",
+          "workstations",
+          "clusters",
+          "create",
+          "${_APP_ID}",
+          "--region=${_REGION}"
+        ]
+      },
+      {
+        "id": "Create Workstations Config",
+        "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
+        "entrypoint": "gcloud",
+        "args": [
+          "beta",
+          "workstations",
+          "configs",
+          "create",
+          "${_APP_ID}-config",
+          "--machine-type=e2-standard-8",
+          "--container-predefined-image=codeoss"
+        ]
+      }
+    ]
+  },
+  "destroy": {
+    "steps": [
+      {
+        "id": "Inspect Values",
+        "name": "ubuntu",
+        "entrypoint": "bash",
+        "args": [
+          "-c",
+          "echo _APP_ID=${_APP_ID} _APP_NAME=${_APP_NAME} _REGION=${_REGION} _INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER} _INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN} _API_KEY=${_API_KEY}"
+        ]
+      },
+      {
+        "id": "Delete config",
+        "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
+        "entrypoint": "gcloud",
+        "args": [
+          "beta",
+          "workstations",
+          "configs",
+          "delete",
+          "--cluster=${_APP_ID}-config",
+          "--region=${_REGION}"
+        ]
+      },
+      {
+        "id": "Delete cluster",
+        "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
+        "entrypoint": "gcloud",
+        "args": [
+          "beta",
+          "workstations",
+          "clusters",
+          "delete",
+          "${_APP_ID}-cluster",
+          "--region=${_REGION}"
+        ]
+      }
+    ]
+  },
+  "inputs": [
+    {
+      "param": "_APP_NAME",
+      "label": "Cluster Name",
+      "description": "Application that will be deployed.",
+      "type": "string",
+      "required": true
+    },
+    {
+      "param": "_REGION",
+      "label": "Cluster Region",
+      "description": "Where do you want to deploy the application?",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "outputs": [
+    {
+      "param": "_SERVICE_URL",
+      "label": "Service Url",
+      "description": "Service Url",
+      "type": "string",
+      "required": true
+    },
+    {
+      "param": "_TRIGGER_URL",
+      "label": "Cloud Build Trigger Url",
+      "description": "Cloud Build Trigger Url",
+      "type": "string",
+      "required": true
+    },
+    {
+      "param": "_REPO_URL",
+      "label": "Repo Url",
+      "description": "Repo Url",
+      "type": "string",
+      "required": true
+    },
+    {
+      "param": "_BUILD_URL",
+      "label": "Cloud Build Url",
+      "description": "Cloud Build Url",
+      "type": "string",
+      "required": true
+    }
+  ]
+}
