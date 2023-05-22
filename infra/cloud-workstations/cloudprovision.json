@@ -11,6 +11,15 @@
         ]
       },
       {
+        "id": "Create Cloud Workstations Cluster",
+        "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
+        "entrypoint": "bash",
+        "args": [
+          "-c",
+          "gcloud beta workstations clusters create ${_APP_ID}-cluster --region=${_REGION}"
+        ]
+      },
+      {
         "id": "Create Cloud Workstations Config",
         "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
         "entrypoint": "bash",
