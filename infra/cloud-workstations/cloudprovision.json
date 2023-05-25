@@ -16,16 +16,34 @@
         "entrypoint": "bash",
         "args": [
           "-c",
-          "gcloud beta workstations clusters create ${_APP_ID}-cluster --region=${_REGION}"
+          "gcloud beta workstations clusters create workstations-cluster --region=${_REGION}"
         ]
       },
       {
-        "id": "Create Cloud Workstations Config",
+        "id": "Create Cloud Workstations Golang Config",
         "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
         "entrypoint": "bash",
         "args": [
           "-c",
-          "gcloud beta workstations configs create ${_APP_ID}-config --cluster=${_APP_ID}-cluster --region=${_REGION} --machine-type=e2-standard-8 --container-predefined-image=codeoss"
+          "gcloud beta workstations configs create workstations-golang-config --cluster=workstations-cluster --region=${_REGION} --machine-type=e2-standard-8 --container-predefined-image=codeoss"
+        ]
+      },
+      {
+        "id": "Create Cloud Workstations Java Config",
+        "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
+        "entrypoint": "bash",
+        "args": [
+          "-c",
+          "gcloud beta workstations configs create workstations-golang-config --cluster=workstations-cluster --region=${_REGION} --machine-type=e2-standard-8 --container-predefined-image=codeoss"
+        ]
+      },
+      {
+        "id": "Create Cloud Workstations Java Config",
+        "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
+        "entrypoint": "bash",
+        "args": [
+          "-c",
+          "gcloud beta workstations configs create workstations-python-config --cluster=workstations-cluster --region=${_REGION} --machine-type=e2-standard-8 --container-predefined-image=codeoss"
         ]
       }
     ]
