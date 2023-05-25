@@ -131,6 +131,27 @@
       "required": true
     },
     {
+      "param": "_WS_CLUSTER",
+      "label": "Workstation Cluster Name",
+      "description": "Workstation Cluster",
+      "type": "string",
+      "required": true
+    },
+    {
+      "param": "_WS_CONFIG",
+      "label": "Workstation Config Name",
+      "description": "Workstation Config",
+      "type": "string",
+      "required": true
+    },
+    {
+      "param": "_REGION",
+      "label": "Application Region",
+      "description": "Where do you want to deploy the application?",
+      "type": "string",
+      "required": true
+    },
+    {
       "param": "_INSTANCE_GIT_REPO_OWNER",
       "label": "Instance GitHub Repository Owner",
       "description": "Instance GitHub Repository Owner",
