@@ -107,7 +107,7 @@
           "workstations",
           "clusters",
           "delete",
-          "${_APP_ID}-cluster",
+          "workstations-cluster",
           "--region=${_REGION}"
         ]
       }
