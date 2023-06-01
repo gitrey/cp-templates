@@ -68,7 +68,8 @@
           "workstations",
           "configs",
           "delete",
-          "--cluster=workstations-python-config",
+          "workstations-python-config",
+          "--cluster=workstations-cluster",
           "--region=${_REGION}"
         ]
       },
@@ -81,7 +82,8 @@
           "workstations",
           "configs",
           "delete",
-          "--cluster=workstations-golang-config",
+          "workstations-golang-config",
+          "--cluster=workstations-cluster",
           "--region=${_REGION}"
         ]
       },
@@ -94,7 +96,8 @@
           "workstations",
           "configs",
           "delete",
-          "--cluster=workstations-java-config",
+          "workstations-java-config",
+          "--cluster=workstations-cluster",
           "--region=${_REGION}"
         ]
       },
