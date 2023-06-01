@@ -60,7 +60,7 @@
         ]
       },
       {
-        "id": "Delete config",
+        "id": "Delete python config",
         "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
         "entrypoint": "gcloud",
         "args": [
@@ -73,7 +73,7 @@
         ]
       },
       {
-        "id": "Delete config",
+        "id": "Delete golang config",
         "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
         "entrypoint": "gcloud",
         "args": [
@@ -86,7 +86,7 @@
         ]
       },
       {
-        "id": "Delete config",
+        "id": "Delete java config",
         "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
         "entrypoint": "gcloud",
         "args": [
