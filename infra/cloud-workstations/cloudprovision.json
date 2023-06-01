@@ -71,7 +71,7 @@
           "workstations-python-config",
           "--cluster=workstations-cluster",
           "--region=${_REGION}",
-          "--quiet
+          "--quiet"
         ]
       },
       {
