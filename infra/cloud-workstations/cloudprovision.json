@@ -16,16 +16,34 @@
         "entrypoint": "bash",
         "args": [
           "-c",
-          "gcloud beta workstations clusters create ${_APP_ID}-cluster --region=${_REGION}"
+          "gcloud beta workstations clusters create workstations-cluster --region=${_REGION}"
         ]
       },
       {
-        "id": "Create Cloud Workstations Config",
+        "id": "Create Cloud Workstations Golang Config",
         "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
         "entrypoint": "bash",
         "args": [
           "-c",
-          "gcloud beta workstations configs create ${_APP_ID}-config --cluster=${_APP_ID}-cluster --region=${_REGION} --machine-type=e2-standard-8 --container-predefined-image=codeoss"
+          "gcloud beta workstations configs create workstations-golang-config --cluster=workstations-cluster --region=${_REGION} --machine-type=e2-standard-8 --container-predefined-image=codeoss"
+        ]
+      },
+      {
+        "id": "Create Cloud Workstations Java Config",
+        "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
+        "entrypoint": "bash",
+        "args": [
+          "-c",
+          "gcloud beta workstations configs create workstations-java-config --cluster=workstations-cluster --region=${_REGION} --machine-type=e2-standard-8 --container-predefined-image=codeoss"
+        ]
+      },
+      {
+        "id": "Create Cloud Workstations Python Config",
+        "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
+        "entrypoint": "bash",
+        "args": [
+          "-c",
+          "gcloud beta workstations configs create workstations-python-config --cluster=workstations-cluster --region=${_REGION} --machine-type=e2-standard-8 --container-predefined-image=codeoss"
         ]
       }
     ]
@@ -42,7 +60,7 @@
         ]
       },
       {
-        "id": "Delete config",
+        "id": "Delete python config",
         "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
         "entrypoint": "gcloud",
         "args": [
@@ -50,8 +68,40 @@
           "workstations",
           "configs",
           "delete",
-          "--cluster=${_APP_ID}-config",
-          "--region=${_REGION}"
+          "workstations-python-config",
+          "--cluster=workstations-cluster",
+          "--region=${_REGION}",
+          "--quiet"
+        ]
+      },
+      {
+        "id": "Delete golang config",
+        "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
+        "entrypoint": "gcloud",
+        "args": [
+          "beta",
+          "workstations",
+          "configs",
+          "delete",
+          "workstations-golang-config",
+          "--cluster=workstations-cluster",
+          "--region=${_REGION}",
+          "--quiet"
+        ]
+      },
+      {
+        "id": "Delete java config",
+        "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
+        "entrypoint": "gcloud",
+        "args": [
+          "beta",
+          "workstations",
+          "configs",
+          "delete",
+          "workstations-java-config",
+          "--cluster=workstations-cluster",
+          "--region=${_REGION}",
+          "--quiet"
         ]
       },
       {
@@ -63,8 +113,9 @@
           "workstations",
           "clusters",
           "delete",
-          "${_APP_ID}-cluster",
-          "--region=${_REGION}"
+          "workstations-cluster",
+          "--region=${_REGION}",
+          "--quiet"
         ]
       }
     ]
