@@ -101,7 +101,7 @@
     "name": "Golang w/ CICD",
     "description": "Golang application with full CICD integration",
     "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/application/go-app-cicd",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/application/go-app-cicd/cloudprovision.json",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/ws/application/go-app-cicd/cloudprovision.json",
     "version": "1.0.0",
     "tags": [
       "cloudrun",
@@ -239,8 +239,8 @@
     "id": 14,
     "name": "Cloud Workstations",
     "description": "Cloud Workstations Cluster and Configuration",
-    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/cloud-workstations",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/infra/cloud-workstations/cloudprovision.json",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/ws/infra/cloud-workstations",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/ws/infra/cloud-workstations/cloudprovision.json",
     "version": "1.0.0",
     "tags": [
       "workstations"
