@@ -44,6 +44,6 @@ steps:
 
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['beta', 'run', 'services', 'add-iam-policy-binding', '$_APP_ID',
-         '--member=AllUsers',
+         '--member=allUsers',
          '--role=roles/run.invoker',
          '--region', '$_REGION']
