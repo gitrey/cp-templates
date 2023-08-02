@@ -41,3 +41,9 @@ steps:
          '--image=us-central1-docker.pkg.dev/$PROJECT_ID/cp-repo/$_APP_ID:$_SHA',
          '--allow-unauthenticated',
          '--region', '$_REGION', '--platform', 'managed']
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['beta', 'run', 'services', 'add-iam-policy-binding', '$_APP_ID',
+         '--member=AllUsers',
+         '--role=roles/run.invoker',
+         '--region', '$_REGION']
