@@ -42,8 +42,8 @@ steps:
          '--allow-unauthenticated',
          '--region', '$_REGION', '--platform', 'managed']
 
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'services', 'add-iam-policy-binding', '$_APP_ID',
-         '--member=allUsers',
-         '--role=roles/run.invoker',
-         '--region', '$_REGION']
+# - name: 'gcr.io/cloud-builders/gcloud'
+#   args: ['beta', 'run', 'services', 'add-iam-policy-binding', '$_APP_ID',
+#          '--member=allUsers',
+#          '--role=roles/run.invoker',
+#          '--region', '$_REGION']
