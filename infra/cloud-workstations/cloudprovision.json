@@ -16,7 +16,7 @@
         "entrypoint": "bash",
         "args": [
           "-c",
-          "gcloud beta workstations clusters create workstations-cluster --region=${_REGION}"
+          "gcloud beta workstations clusters create ${_APP_NAME} --region=${_REGION}"
         ]
       },
       {
@@ -25,7 +25,7 @@
         "entrypoint": "bash",
         "args": [
           "-c",
-          "gcloud beta workstations configs create workstations-golang-config --cluster=workstations-cluster --region=${_REGION} --machine-type=e2-standard-8 --container-predefined-image=codeoss"
+          "gcloud beta workstations configs create workstations-golang-config --cluster=${_APP_NAME} --region=${_REGION} --machine-type=e2-standard-8 --container-predefined-image=codeoss"
         ]
       },
       {
@@ -34,7 +34,7 @@
         "entrypoint": "bash",
         "args": [
           "-c",
-          "gcloud beta workstations configs create workstations-java-config --cluster=workstations-cluster --region=${_REGION} --machine-type=e2-standard-8 --container-predefined-image=codeoss"
+          "gcloud beta workstations configs create workstations-java-config --cluster=${_APP_NAME} --region=${_REGION} --machine-type=e2-standard-8 --container-predefined-image=codeoss"
         ]
       },
       {
@@ -43,7 +43,7 @@
         "entrypoint": "bash",
         "args": [
           "-c",
-          "gcloud beta workstations configs create workstations-python-config --cluster=workstations-cluster --region=${_REGION} --machine-type=e2-standard-8 --container-predefined-image=codeoss"
+          "gcloud beta workstations configs create workstations-python-config --cluster=${_APP_NAME} --region=${_REGION} --machine-type=e2-standard-8 --container-predefined-image=codeoss"
         ]
       }
     ]
@@ -69,7 +69,7 @@
           "configs",
           "delete",
           "workstations-python-config",
-          "--cluster=workstations-cluster",
+          "--cluster=${_APP_NAME}",
           "--region=${_REGION}",
           "--quiet"
         ]
@@ -84,7 +84,7 @@
           "configs",
           "delete",
           "workstations-golang-config",
-          "--cluster=workstations-cluster",
+          "--cluster=${_APP_NAME}",
           "--region=${_REGION}",
           "--quiet"
         ]
@@ -99,7 +99,7 @@
           "configs",
           "delete",
           "workstations-java-config",
-          "--cluster=workstations-cluster",
+          "--cluster=${_APP_NAME}",
           "--region=${_REGION}",
           "--quiet"
         ]
@@ -113,7 +113,7 @@
           "workstations",
           "clusters",
           "delete",
-          "workstations-cluster",
+          "${_APP_NAME}",
           "--region=${_REGION}",
           "--quiet"
         ]
