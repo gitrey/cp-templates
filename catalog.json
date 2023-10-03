@@ -268,5 +268,55 @@
         "type": "url"
       }
     ]
+  },
+  {
+    "id": 15,
+    "name": "Java w/ CICD",
+    "description": "Java application with CICD integration",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/application/java-app-cicd",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/application/java-app-cicd/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "java",
+      "gke",
+      "cicd"
+    ],
+    "category": "application",
+    "lastModified": "2023-09-10T11:10:04.000Z",
+    "owner": "Google Cloud Solutions Architecture Team",
+    "email": "sa-cloud-provision-templates@google.com",
+    "draft": true,
+    "metadata": [
+      {
+        "name": "Build, test, and containerize Java applications",
+        "value": "https://cloud.google.com/build/docs/building/build-containerize-java",
+        "type": "url"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Cloud Deploy Pipeline w/ GKE Target",
+    "description": "Cloud Deploy pipeline with a single GKE target (dev)",
+    "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/clouddeploy-pipeline",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/infra/clouddeploy-pipeline/cloudprovision.json",
+    "version": "1.0.0",
+    "tags": [
+      "gke",
+      "cicd",
+      "pipeline"
+    ],
+    "category": "infra",
+    "lastModified": "2023-09-10T11:10:04.000Z",
+    "owner": "Google Cloud Solutions Architecture Team",
+    "email": "sa-cloud-provision-templates@google.com",
+    "draft": true,
+    "metadata": [
+      {
+        "name": "Deploy an app to GKE using Cloud Deploy",
+        "value": "https://cloud.google.com/deploy/docs/deploy-app-gke",
+        "type": "url"
+      }
+    ]
   }
 ]

@@ -1,0 +1,51 @@
+# Copyright 2023 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+steps:
+  - name: gcr.io/cloud-builders/git
+    args:
+      - '-c'
+      - |
+        IFS='/' read -a array <<< "${_REF}"
+        echo ${_REF}
+        echo 0 ${array[0]}
+        echo 1 ${array[1]}
+        echo 2 ${array[2]}
+        echo REPO=${_APP_REPO}
+        echo _SHA=${_SHA}
+        export REPO=${_APP_REPO}
+
+        echo BRANCH_NAME=${array[2]}
+        export BRANCH_NAME=${array[2]}
+
+        if ((${array[1]} == "tags")); then
+          echo "TAG " ${BRANCH_NAME}
+        elif ((${array[2]} == "main")); then
+          echo "main"
+        else
+          echo ${BRANCH_NAME}
+        fi
+        echo "git clone -b ${array[2]} ${_APP_REPO}"
+        git clone -b ${array[2]} ${_APP_REPO}
+        echo done
+    id: clone-app
+    entrypoint: bash
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    entrypoint: 'bash'
+    args:
+    - '-xe'
+    - -c
+    - |
+      gcloud deploy apply \
+      --region ${_REGION} \
+      --file ./${_APP_ID}/clouddeploy.yaml
