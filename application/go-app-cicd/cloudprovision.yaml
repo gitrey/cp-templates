@@ -1,0 +1,129 @@
+create:
+  steps:
+  - id: Inspect Values
+    name: ubuntu
+    entrypoint: bash
+    args: ["-c",
+      "echo _APP_ID=${_APP_ID} _APP_NAME='${_APP_NAME}' _REGION=${_REGION} _INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER}
+      _INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN} _API_KEY=${_API_KEY}"]
+  - id: clone cp-templates
+    name: gcr.io/cloud-builders/git
+    entrypoint: bash
+    args: ["-c",
+          "git clone -b main https://github.com/gitrey/cp-templates.git"]
+  - id: clone cp-utils
+    name: gcr.io/cloud-builders/git
+    entrypoint: bash
+    args: ["-c",
+      "git clone -b main https://github.com/cgrant/cp-utils.git utils"]
+  - id: createApp
+    name: ubuntu
+    env:
+    - APP_ID=${_APP_ID}
+    - APP_NAME=${_APP_NAME}
+    - REGION=${_REGION}
+    - INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}
+    - INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER}
+    - TEMPLATE_FOLDER=cp-templates/application/go-app-cicd
+    - API_KEY=${_API_KEY}
+    script: "./utils/createApp.sh"
+  - id: createGitWebhook
+    name: gcr.io/cloud-builders/gcloud
+    env:
+    - PROJECT_ID=$PROJECT_ID
+    - APP_ID=${_APP_ID}
+    - APP_NAME=${_APP_NAME}
+    - GIT_USER=${_INSTANCE_GIT_REPO_OWNER}
+    - GIT_TOKEN=${_INSTANCE_GIT_REPO_TOKEN}
+    - REGION=${_REGION}
+    - TEMPLATE_FOLDER=cp-templates/application/go-app-cicd
+    - API_KEY=${_API_KEY}
+    script: "./utils/createWebhook.sh"
+destroy:
+  steps:
+  - id: Inspect Values
+    name: ubuntu
+    entrypoint: bash
+    args: ["-c",
+          "echo _APP_ID=${_APP_ID} _APP_NAME=${_APP_NAME} _REGION=${_REGION} _INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER}",
+          "_INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN} _API_KEY=${_API_KEY}"]
+  - id: Delete git repo
+    name: curlimages/curl
+    args: ["-L",
+      "-X",
+      "DELETE",
+      "-H",
+      "Accept: application/vnd.github+json",
+      "-H",
+      "Authorization: Bearer ${_INSTANCE_GIT_REPO_TOKEN}",
+      "-H",
+      "X-GitHub-Api-Version: 2022-11-28",
+      "https://api.github.com/repos/${_INSTANCE_GIT_REPO_OWNER}/${_APP_ID}"]
+  - id: Delete cloud build trigger
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args: ["alpha",
+      "builds",
+      "triggers",
+      "delete",
+      "${_APP_ID}-webhook-trigger",
+      "--quiet"]
+  - id: Delete cloud run service
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args: ["run",
+      "services",
+      "delete",
+      "${_APP_ID}",
+      "--region",
+      "${_REGION}",
+      "--quiet"]
+inputs:
+- param: _APP_NAME
+  label: Application Name
+  description: Application that will be deployed.
+  type: string
+  required: true
+- param: _REGION
+  label: Application Region
+  description: Where do you want to deploy the application?
+  type: string
+  required: true
+- param: _INSTANCE_GIT_REPO_OWNER
+  label: Instance GitHub Repository Owner
+  description: Instance GitHub Repository Owner
+  type: dropdown
+  required: true
+- param: _INSTANCE_GIT_REPO_TOKEN
+  label: Instance GitHub Repository Token
+  description: Instance GitHub Repository Token
+  type: string
+  required: true
+  display: false
+- param: _API_KEY
+  label: GCP API Key
+  description: GCP API Key
+  type: string
+  required: true
+  display: false
+outputs:
+- param: _SERVICE_URL
+  label: Service Url
+  description: Service Url
+  type: string
+  required: true
+- param: _TRIGGER_URL
+  label: Cloud Build Trigger Url
+  description: Cloud Build Trigger Url
+  type: string
+  required: true
+- param: _REPO_URL
+  label: Repo Url
+  description: Repo Url
+  type: string
+  required: true
+- param: _BUILD_URL
+  label: Cloud Build Url
+  description: Cloud Build Url
+  type: string
+  required: true
