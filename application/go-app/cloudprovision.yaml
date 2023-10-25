@@ -1,0 +1,39 @@
+cloudbuild:
+  steps:
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    args: ["gcloud", "beta", "builds", "triggers", "create", "github",
+      "--name=${_APP_NAME}-trigger",
+      "--repo-name=cp-templates",
+      "--repo-owner=gitrey",
+      "--branch-pattern=main",
+      "--included-files=application/go-app/**",
+      "--build-config=./application/go-app/cloudbuild.yaml",
+      "--substitutions=_APP_NAME=${_APP_NAME},_REPO_NAME=cp-repo,_REGION=${_REGION},_INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER},_INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN},_API_KEY=${_API_KEY}"]
+params:
+- param: _APP_NAME
+  label: Application Name
+  description: Application that will be deployed.
+  type: string
+  required: true
+- param: _REGION
+  label: Application Region
+  description: Where do you want to deploy the application?
+  type: string
+  required: true
+- param: _INSTANCE_GIT_REPO_OWNER
+  label: Instance GitHub Repository Owner
+  description: Instance GitHub Repository Owner
+  type: dropdown
+  required: true
+- param: _INSTANCE_GIT_REPO_TOKEN
+  label: Instance GitHub Repository Token
+  description: Instance GitHub Repository Token
+  type: string
+  required: true
+  display: false
+- param: _API_KEY
+  label: Instance GitHub Repository Token
+  description: Instance GitHub Repository Token
+  type: string
+  required: true
+  display: false

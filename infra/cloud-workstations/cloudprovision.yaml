@@ -1,0 +1,109 @@
+create:
+  steps:
+  - id: Inspect Values
+    name: ubuntu
+    entrypoint: bash
+    args: ["-c",
+      "echo _APP_ID=${_APP_ID} _APP_NAME=${_APP_NAME} _REGION=${_REGION} _INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER} _INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN} _API_KEY=${_API_KEY}"]
+  - id: Create Cloud Workstations Cluster
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: bash
+    args: ["-c",
+      "gcloud beta workstations clusters create ${_APP_NAME} --region=${_REGION}"]
+  - id: Create Cloud Workstations Golang Config
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: bash
+    args: ["-c",
+      "gcloud beta workstations configs create workstations-golang-config --cluster=${_APP_NAME} --region=${_REGION} --machine-type=e2-standard-8 --container-predefined-image=codeoss"]
+  - id: Create Cloud Workstations Java Config
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: bash
+    args: ["-c",
+      "gcloud beta workstations configs create workstations-java-config --cluster=${_APP_NAME} --region=${_REGION} --machine-type=e2-standard-8 --container-predefined-image=codeoss"]
+  - id: Create Cloud Workstations Python Config
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: bash
+    args: ["-c",
+      "gcloud beta workstations configs create workstations-python-config --cluster=${_APP_NAME} --region=${_REGION} --machine-type=e2-standard-8 --container-predefined-image=codeoss"]
+destroy:
+  steps:
+  - id: Inspect Values
+    name: ubuntu
+    entrypoint: bash
+    args: ["-c",
+      "echo _APP_ID=${_APP_ID} _APP_NAME=${_APP_NAME} _REGION=${_REGION} _INSTANCE_GIT_REPO_OWNER=${_INSTANCE_GIT_REPO_OWNER} _INSTANCE_GIT_REPO_TOKEN=${_INSTANCE_GIT_REPO_TOKEN} _API_KEY=${_API_KEY}"]
+  - id: Delete python config
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args: ["beta",
+      "workstations",
+      "configs",
+      "delete",
+      "workstations-python-config",
+      "--cluster=${_APP_NAME}",
+      "--region=${_REGION}",
+      "--quiet"]
+  - id: Delete golang config
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args: ["beta",
+      "workstations",
+      "configs",
+      "delete",
+      "workstations-golang-config",
+      "--cluster=${_APP_NAME}",
+      "--region=${_REGION}",
+      "--quiet"]
+  - id: Delete java config
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args: ["beta",
+      "workstations",
+      "configs",
+      "delete",
+      "workstations-java-config",
+      "--cluster=${_APP_NAME}",
+      "--region=${_REGION}",
+      "--quiet"]
+  - id: Delete cluster
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args: ["beta",
+      "workstations",
+      "clusters",
+      "delete",
+      "${_APP_NAME}",
+      "--region=${_REGION}",
+      "--quiet"]
+inputs:
+- param: _APP_NAME
+  label: Cluster Name
+  description: Application that will be deployed.
+  type: string
+  required: true
+- param: _REGION
+  label: Cluster Region
+  description: Where do you want to deploy the application?
+  type: string
+  required: true
+outputs:
+- param: _SERVICE_URL
+  label: Service Url
+  description: Service Url
+  type: string
+  required: true
+- param: _TRIGGER_URL
+  label: Cloud Build Trigger Url
+  description: Cloud Build Trigger Url
+  type: string
+  required: true
+- param: _REPO_URL
+  label: Repo Url
+  description: Repo Url
+  type: string
+  required: true
+- param: _BUILD_URL
+  label: Cloud Build Url
+  description: Cloud Build Url
+  type: string
+  required: true

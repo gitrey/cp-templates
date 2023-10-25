@@ -22,7 +22,7 @@
     "name": "Managing infrastructure as code with Terraform",
     "description": "Managing infrastructure as code with Terraform, Cloud Build, and GitOps",
     "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/solution/iac-terraform-cloudbuild",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/solution/iac-terraform-cloudbuild/cloudprovision.json",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/solution/iac-terraform-cloudbuild/cloudprovision.yaml",
     "version": "1.0.0",
     "tags": [
       "terraform",
@@ -40,7 +40,7 @@
     "name": "PubSub",
     "description": "Create PubSub instance",
     "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/pubsub",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/infra/pubsub/cloudprovision.json",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/infra/pubsub/cloudprovision.yaml",
     "version": "1.0.0",
     "tags": [
       "pubsub"
@@ -56,7 +56,7 @@
     "name": "CloudSQL (MySQL)",
     "description": "Create CloudSQL MySQL instance",
     "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/pubsub",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/infra/cloudsql-mysql/cloudprovision.json",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/infra/cloudsql-mysql/cloudprovision.yaml",
     "version": "1.0.0",
     "tags": [
       "cloudsql",
@@ -73,7 +73,7 @@
     "name": "CloudSQL (PostgreSQL)",
     "description": "Create CloudSQL PostgreSQL instance",
     "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/cloudsql-postgresql",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/infra/cloudsql-postgresql/cloudprovision.json",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/infra/cloudsql-postgresql/cloudprovision.yaml",
     "version": "1.0.0",
     "tags": [
       "cloudsql",
@@ -90,7 +90,7 @@
     "name": "Google Cloud Storage",
     "description": "Create Google Cloud Storage bucket",
     "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/gcs",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/infra/gcs/cloudprovision.json",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/infra/gcs/cloudprovision.yaml",
     "version": "1.0.0",
     "tags": [
       "gcs",
@@ -107,7 +107,7 @@
     "name": "Golang w/ CICD",
     "description": "Golang application with full CICD integration",
     "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/application/go-app-cicd",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/application/go-app-cicd/cloudprovision.json",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/application/go-app-cicd/cloudprovision.yaml",
     "version": "1.0.0",
     "tags": [
       "cloudrun",
@@ -191,7 +191,7 @@
     "name": "Java w/ CICD",
     "description": "Java application with full CICD integration",
     "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/application/go-app-cicd",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/application/go-app-cicd/cloudprovision.json",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/application/go-app-cicd/cloudprovision.yaml",
     "version": "1.0.0",
     "tags": [
       "cloudrun",
@@ -221,7 +221,7 @@
     "name": "Node.js w/ CICD",
     "description": "Node.js application with full CICD integration",
     "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/application/go-app-cicd",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/application/go-app-cicd/cloudprovision.json",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/application/go-app-cicd/cloudprovision.yaml",
     "version": "1.0.0",
     "tags": [
       "cloudrun",
@@ -251,7 +251,7 @@
     "name": "Cloud Workstations",
     "description": "Cloud Workstations Cluster and Configuration",
     "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/cloud-workstations",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/infra/cloud-workstations/cloudprovision.json",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/infra/cloud-workstations/cloudprovision.yaml",
     "version": "1.0.0",
     "tags": [
       "workstations"
@@ -274,7 +274,7 @@
     "name": "Java w/ CICD",
     "description": "Java application with CICD integration",
     "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/application/java-app-cicd",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/application/java-app-cicd/cloudprovision.json",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/application/java-app-cicd/cloudprovision.yaml",
     "version": "1.0.0",
     "tags": [
       "java",
@@ -299,7 +299,7 @@
     "name": "Cloud Deploy Pipeline w/ GKE Target",
     "description": "Cloud Deploy pipeline with a single GKE target (dev)",
     "sourceUrl": "https://github.com/gitrey/cp-templates/tree/main/infra/clouddeploy-pipeline",
-    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/infra/clouddeploy-pipeline/cloudprovision.json",
+    "cloudProvisionConfigUrl": "https://raw.githubusercontent.com/gitrey/cp-templates/main/infra/clouddeploy-pipeline/cloudprovision.yaml",
     "version": "1.0.0",
     "tags": [
       "gke",
